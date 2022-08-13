@@ -165,7 +165,853 @@
         <category>计算机基础</category>
       </categories>
       <tags>
-        <tag>基础知识</tag>
+        <tag>基础</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux学习笔记</title>
+    <url>/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<h1 id="LInux学习笔记："><a href="#LInux学习笔记：" class="headerlink" title="LInux学习笔记："></a>LInux学习笔记：</h1><h2 id="文件目录系统："><a href="#文件目录系统：" class="headerlink" title="文件目录系统："></a>文件目录系统：</h2><h3 id="Linux下一切皆文件"><a href="#Linux下一切皆文件" class="headerlink" title="Linux下一切皆文件"></a>Linux下一切皆文件</h3><p><strong>~ 为当前用户目录</strong>   root 用户为&#x2F;root   一般用户为  &#x2F;home&#x2F;usr  </p>
+<p>Linux中&#x2F;opt和&#x2F;usr&#x2F;local目录(<a href="https://blog.csdn.net/LuRenJiang/article/details/104462296">https://blog.csdn.net/LuRenJiang/article/details/104462296</a>)</p>
+<p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220703121919057.png" alt="image-20220703121919057"></p>
+<p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220703120441513.png" alt="image-20220703120441513"></p>
+<p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220703121111156.png" alt="image-20220703121111156"></p>
+<p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220703121841132.png" alt="image-20220703121841132"></p>
+<h2 id="Linux指令"><a href="#Linux指令" class="headerlink" title="Linux指令"></a>Linux指令</h2><h3 id="vim文本编辑器"><a href="#vim文本编辑器" class="headerlink" title="vim文本编辑器"></a>vim文本编辑器</h3><p><strong>应用场景：</strong> 直接在linux系统修改服务器上的代码 ，而不是在windows下修改后上传。</p>
+<h4 id="三种模式"><a href="#三种模式" class="headerlink" title="三种模式"></a>三种模式</h4><p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220703123206185.png" alt="image-20220703123206185"></p>
+<h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><h5 id="一般模式"><a href="#一般模式" class="headerlink" title="一般模式"></a>一般模式</h5><ol>
+<li>G 跳转文本末尾	数字 + G  跳转指定行	gg 文本开头</li>
+<li>yy 复制光标当前行 5yy复制向下五行   p 粘贴</li>
+<li>dd 删除光标当前行 5dd删除向下五行</li>
+</ol>
+<h5 id="命令行模式"><a href="#命令行模式" class="headerlink" title="命令行模式"></a>命令行模式</h5><pre><code> 1. 显示行号   :set nu  取消行号 :set nonu +  跳转指定行   : 行号
+ 2. 查找字符串     /字符串  
+</code></pre>
+<h3 id="用户管理"><a href="#用户管理" class="headerlink" title="用户管理"></a>用户管理</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">useradd -g 组名 -d 家目录 zhangsan</span><br><span class="line">usermod -g  组名</span><br><span class="line">passwd zhangsan </span><br><span class="line">userdel -r zhangsan 	#加r删除家目录</span><br><span class="line">su - 用户  切换用户</span><br><span class="line">groupadd 组名  groupdel 组名</span><br><span class="line">logout/exit</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220704134101955.png" alt="image-20220704134101955"></p>
+<h3 id="运行级别"><a href="#运行级别" class="headerlink" title="运行级别"></a>运行级别</h3><p>3- 多用户  5-图形化界面</p>
+<p>cetos7以后：</p>
+<p>systemctl get-default       systemctl set-default multi–user.target</p>
+<h3 id="文件目录指令"><a href="#文件目录指令" class="headerlink" title="文件目录指令"></a>文件目录指令</h3><p><strong>| 管道指令 将前一个命令执行的结果传递给后一个命令处理</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ls -al 目录		-h 大小以M，K，G的单位显示  </span><br><span class="line">mkdir -p 目录		-p多级目录</span><br><span class="line">rmdir 目录		只能删除空目录</span><br><span class="line">rm -rf 目录		-r递归  -f 强制 </span><br><span class="line">touch 文件		创建文件 </span><br><span class="line">cp -r source dest 		默认直接覆盖不提示</span><br><span class="line">mv /source/oldfilename /dest/newfilename		移动并重命名</span><br><span class="line">cat -n 文件 | more [交互指令]		-n显示行号  </span><br><span class="line">head/tail -n 3 文件		查看前3行或后三行</span><br><span class="line">less 文件		查看大文件，查看才加载 n向下翻页 N向上</span><br><span class="line">echo $HOSTNAME		输出内容到控制台 </span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">&gt; </span><span class="language-bash">输出重定向 &gt;&gt; 追加</span></span><br><span class="line">ls -l &gt; 文件</span><br><span class="line">cat 文件1 &gt; 文件2		复制文件1内容到文件2</span><br><span class="line">echo 内容 &gt; 文件		覆盖文件内容</span><br><span class="line">echo 内容 &gt;&gt; 文件		追加内容</span><br><span class="line"></span><br><span class="line">软连接 快捷方式</span><br><span class="line">ln -s 源文件 链接	</span><br><span class="line"></span><br><span class="line">history number 查看最近几条历史指令</span><br></pre></td></tr></table></figure>
+
+<h3 id="搜索查找指令"><a href="#搜索查找指令" class="headerlink" title="搜索查找指令"></a>搜索查找指令</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">find 查找范围 -name 查找文件名 -size +200M/-200M</span><br><span class="line"></span><br><span class="line">updatedb   #创建搜索的数据库</span><br><span class="line">locate 文件名		#查找文件位置</span><br><span class="line"></span><br><span class="line">grep -n 显示行号 -i 忽视大小写 查找文本 文件</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">或者</span>  </span><br><span class="line">cat 文件名 | grep 查找文本</span><br></pre></td></tr></table></figure>
+
+<h3 id="文件压缩"><a href="#文件压缩" class="headerlink" title="文件压缩"></a>文件压缩</h3><p>防止传输过程中部分文件丢失。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">gzip/gunzip  #只能压缩文件，不能压缩文件夹		 .gz</span><br><span class="line"></span><br><span class="line">zip -r xxx.zip 目录						# .zip</span><br><span class="line">unzip -d 指定目录 xxx.zip</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">压缩</span></span><br><span class="line">tar -zcvf 12.tar.gz 1.txt  2.txt	  	  #.tar.gz</span><br><span class="line"><span class="meta prompt_">#</span><span class="language-bash">解压</span></span><br><span class="line">tar -zxvf 12.tar.gz -C /home/</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220704184034159.png" alt="image-20220704184034159"></p>
+<h3 id="权限说明"><a href="#权限说明" class="headerlink" title="权限说明"></a>权限说明</h3><p><strong><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220704192754527.png" alt="image-20220704192754527" style="zoom:100%;"></strong></p>
+<p><strong>第零位 - 普通文件</strong></p>
+<p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220704193244670.png" alt="image-20220704193244670"></p>
+<h3 id="修改权限"><a href="#修改权限" class="headerlink" title="修改权限"></a>修改权限</h3><p><img src="/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/image-20220704194847924.png" alt="image-20220704194847924"></p>
+<p>第二种：<strong>rwx 421   和为7</strong></p>
+<p>chmod 777</p>
+<h3 id="shell-编程"><a href="#shell-编程" class="headerlink" title="shell 编程"></a>shell 编程</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"></span><br><span class="line">echo &quot;Hello World!&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h3 id="常用操作"><a href="#常用操作" class="headerlink" title="常用操作"></a>常用操作</h3><h4 id="端口占用"><a href="#端口占用" class="headerlink" title="端口占用"></a>端口占用</h4><p><a href="https://blog.csdn.net/pkorochi/article/details/100533342?ops_request_misc=%7B%22request_id%22:%22165529903016781667874383%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=165529903016781667874383&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-100533342-null-null.142%5Ev16%5Epc_search_result_control_group,157%5Ev14%5Enew_3&utm_term=%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%8F%A3%E8%A2%AB%E5%8D%A0%E7%94%A8&spm=1018.2226.3001.4187">(59条消息) 服务器端口被占用了怎么办，看这一篇就行了_MoneyProgramming的博客-CSDN博客_服务器端口占用</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">lsof -i:8080</span><br><span class="line">kill -9 pid</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#目录</span><br><span class="line">cd /usr/local/bin</span><br><span class="line">#启动</span><br><span class="line">redis-server myconf/redis.conf </span><br><span class="line">#连接</span><br><span class="line">redis-cli -c -p 6379</span><br><span class="line">auth 749749</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">grant all on *.* to root@&#x27;%&#x27; identified by &#x27;749749&#x27; with grant option;</span><br><span class="line">update user set host = &#x27;%&#x27; where user = &#x27;root&#x27;;</span><br><span class="line">systemctl restart mysqld</span><br><span class="line">systemctl status mysqld</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#解压文件储存在/home路径下</span><br><span class="line">cd /usr/local/nginx/sbin</span><br><span class="line">./nginx</span><br><span class="line">ps -ef|grep nginx</span><br><span class="line"></span><br><span class="line">#重启</span><br><span class="line">./nginx -s reload</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment">#运行mysql容器</span></span><br><span class="line">docker run --name ct-mysql -e MYSQL_ROOT_PASSWORD=749749 \</span><br><span class="line">-p 3306:3306 \</span><br><span class="line">-v  /tmp/mysql/data:/var/lib/mysql \</span><br><span class="line">-v /tmp/mysql/conf/hmy.cnf:/etc/mysql/conf.d\hmy.cnf  \</span><br><span class="line">-d mysql:5.7</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Linux</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>java基础</title>
+    <url>/2022/08/13/java%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h2 id="java基础"><a href="#java基础" class="headerlink" title="java基础"></a>java基础</h2><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//缓存池</span></span><br><span class="line">Integer.valueOf(<span class="number">127</span>);  <span class="comment">//缓存池大小-128~127</span></span><br><span class="line"><span class="type">Integer</span> <span class="variable">x</span> <span class="operator">=</span> <span class="number">127</span>;  <span class="comment">//调用valueOf() 方法进行自动装箱；</span></span><br><span class="line"><span class="keyword">new</span> <span class="title class_">Integer</span>(<span class="number">127</span>); <span class="comment">// 不走缓存池，直接新建对象；</span></span><br><span class="line"><span class="comment">//String 不可变</span></span><br><span class="line"><span class="type">String</span> <span class="variable">s1</span> <span class="operator">=</span> <span class="string">&quot;aaa&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s2</span> <span class="operator">=</span> <span class="string">&quot;aaa&quot;</span>;</span><br><span class="line"><span class="type">String</span> <span class="variable">s3</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;aaa&quot;</span>);</span><br><span class="line">s1 == s2 ?  <span class="literal">true</span>;</span><br><span class="line">s1 == s3? <span class="literal">false</span>;</span><br><span class="line">s3.intern()==s1?  <span class="literal">true</span>;   <span class="comment">// 如果字符串内容相同，intern方法将引用变为常量池中字符串引用；</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="public-protected-private"><a href="#public-protected-private" class="headerlink" title="public protected private"></a>public protected private</h3><p><img src="/2022/08/13/java%E5%9F%BA%E7%A1%80/image-20220718103601279.png" alt="image-20220718103601279"></p>
+<h3 id="a-x3D-a-b-与-a-x3D-b-的区别"><a href="#a-x3D-a-b-与-a-x3D-b-的区别" class="headerlink" title="a &#x3D; a + b 与 a +&#x3D; b 的区别"></a>a &#x3D; a + b 与 a +&#x3D; b 的区别</h3><p>+&#x3D; 隐式的将加操作的结果类型强制转换为持有结果的类型。如果两个整型相加，如 byte、short 或者 int，首先会将它们提升到 int 类型，然后在执行加法操作。</p>
+<h3 id="不可变的"><a href="#不可变的" class="headerlink" title="不可变的"></a>不可变的</h3><ul>
+<li><p><strong>final</strong> 关键字修饰的<strong>基本数据类型</strong></p>
+</li>
+<li><p>String</p>
+</li>
+<li><p>枚举类型</p>
+</li>
+<li><p>Number 部分子类，如 Long 和 Double 等<strong>数值包装类型</strong>，BigInteger 和 BigDecimal 等大数据类型。（<strong>主要是为了使包装类的表现与基本类型一值，所以在进行变量间的赋值时赋的是值而不是地址）</strong></p>
+<p>但同为 Number 的<strong>原子类</strong> AtomicInteger 和 AtomicLong 则是<strong>可变的</strong>，赋值赋的是地址。</p>
+</li>
+<li><p><strong>集合类型</strong>，可以使用 Collections.unmodifiableXXX() 方法来获取一个不可变的集合。</p>
+</li>
+</ul>
+<h4 id="1-hashmap冲突的解决方法以及原理分析"><a href="#1-hashmap冲突的解决方法以及原理分析" class="headerlink" title="1.  hashmap冲突的解决方法以及原理分析"></a>1.  <a href="https://www.cnblogs.com/peizhe123/p/5790252.html">hashmap冲突的解决方法以及原理分析</a></h4><p>​		hashset与hashmap 的put 的过程有区别；</p>
+<p>​		hash值相同但实际值不同的两个值才会发生<strong>冲突</strong>。如果都相同则会更新value的值。</p>
+<h4 id="2-解决hash冲突的几种方法"><a href="#2-解决hash冲突的几种方法" class="headerlink" title="2. 解决hash冲突的几种方法"></a>2. <a href="https://www.cnblogs.com/scu-cjx/p/8604384.html">解决hash冲突的几种方法</a></h4><p>​		线性探测，二次探测，双哈希，伪随机，put容易，但remove后要标记，加个墓碑。防止get到已删除的数据。</p>
+<h4 id="3-ConcurrentHashMap核心原理"><a href="#3-ConcurrentHashMap核心原理" class="headerlink" title="3. ConcurrentHashMap核心原理"></a>3. <a href="https://xie.infoq.cn/article/901e4fa89353a6dfb63490c3d">ConcurrentHashMap核心原理</a></h4><p>​		 <strong>sychronized（锁槽点） + cas自旋（put值）</strong></p>
+<p>​		hashtable的区别： hashtable 	底层数组加链表，  方法都位同步方法，全表加锁，sychroinzed</p>
+<h4 id="4-接口与抽象类的区别"><a href="#4-接口与抽象类的区别" class="headerlink" title="4. 接口与抽象类的区别"></a>4. 接口与抽象类的区别</h4><p><a href="http://c.biancheng.net/view/6551.html">Java抽象类和接口的区别 (biancheng.net)</a></p>
+<h4 id="3）抽象类和接口的区别"><a href="#3）抽象类和接口的区别" class="headerlink" title="3）抽象类和接口的区别"></a>3）抽象类和接口的区别</h4><p><strong>设计目的不同</strong>：</p>
+<p><strong>接口体现的是一种规范</strong>。对于<strong>接口的实现者而言，接口规定了实现者必须向外提供哪些服务</strong>（以方法的形式来提供）；对于接口的调用者而言，<strong>接口规定了调用者可以调用哪些服务，以及如何调用这些服务</strong>（就是如何来调用方法）。当在一个程序中使用接口时，实现了<strong>多个模块的解耦</strong>，当在多个应用程序之间使用接口时，接口是多个程序之间的<strong>通信标准</strong>。</p>
+<p>从某种程度上来看，接口类似于整个系统的“总纲”，它制定了系统各模块应该遵循的标准，因此一个系统中的接口不应该经常改变。一旦接口被改变，对整个系统甚至其他系统的影响将是辐射式的，会导致系统中大部分类都需要改写。<strong>所以说jdk8才新加了默认方法和静态方法。</strong></p>
+<p>抽象类则不一样，抽象类作为系统中多个子类的共同父类，它所体现的是一种<strong>模板式设计</strong>。抽象类作为多个子类的抽象父类，可以被当成系统实现过程中的<strong>中间产品</strong>，这个中间产品已经实现了系统的部分功能（那些已经提供实现的方法），但这个产品依然不能当成最终产品，必须有更进一步的完善，这种完善可能有几种不同方式。</p>
+<p><strong>之后才是：</strong>1. 抽象类只能单继承，接口可以多实现。</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>抽象类</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>实现</td>
+<td>子类使用 extends 关键字来继承抽象类，如果子类不是抽象类，则需要提供抽象类中<strong>所有声明的方法的实现。</strong></td>
+<td>子类使用 implements 关键字来实现接口，需要提供接口中<strong>所有声明的方法的实现。</strong></td>
+</tr>
+<tr>
+<td><strong>访问修饰符</strong></td>
+<td>可以用 public、protected 和 default 修饰</td>
+<td>默认修饰符是 public，不能使用其它修饰符</td>
+</tr>
+<tr>
+<td><strong>方法</strong></td>
+<td>完全可以包含普通方法</td>
+<td>只能包含抽象方法、<strong>静态方法、默认方法</strong>，不能为普通方法提供方法实现</td>
+</tr>
+<tr>
+<td><strong>变量</strong></td>
+<td>既可以定义普通成员变量，也可以定义静态常量</td>
+<td>只能定义静态常量，不能定义普通成员变量</td>
+</tr>
+<tr>
+<td>构造方法</td>
+<td>抽象类里的构造方法并不是用于创建对象，而是让其子类调用这些构造方法来完成属于抽象类的初始化操作</td>
+<td>没有构造方法</td>
+</tr>
+<tr>
+<td>初始化块</td>
+<td>可以包含初始化块</td>
+<td>不能包含初始化块</td>
+</tr>
+<tr>
+<td>main 方法</td>
+<td>可以有 main 方法，并且能运行</td>
+<td>没有 main 方法</td>
+</tr>
+<tr>
+<td>与普通Java类的区别</td>
+<td>抽象类不能实例化，除此之外和普通 Java 类没有任何区别</td>
+<td>是完全不同的类型</td>
+</tr>
+<tr>
+<td>运行速度</td>
+<td>比接口运行速度要快</td>
+<td>需要时间去寻找在类种实现的方法，所以运行速度稍微有点慢</td>
+</tr>
+</tbody></table>
+<h4 id="5-深入理解String、StringBuffer和StringBuilder类的区别-云-社区-腾讯云-tencent-com-https-cloud-tencent-com-developer-article-1414756-text-StringBuffer与StringBuilder都提供了一系列插入、追加、改变字符串里的字符序列的方法，它们的用法基本相同，只是StringBuilder是线程不安全的，StringBuffer是线程安全的，。-如果只是在单线程中使用字符串缓冲区，则StringBuilder的效率会高些，但是当多线程访问时，最好使用StringBuffer。-综上，在执行效率方面，StringBuilder最高，StringBuffer次之，String最低，对于这种情况，一般而言，如果要操作的数量比较小，应优先使用String类；如果是在单线程下操作大量数据，应优先使用StringBuilder类；如果是在多线程下操作大量数据，应优先使用StringBuilder类。"><a href="#5-深入理解String、StringBuffer和StringBuilder类的区别-云-社区-腾讯云-tencent-com-https-cloud-tencent-com-developer-article-1414756-text-StringBuffer与StringBuilder都提供了一系列插入、追加、改变字符串里的字符序列的方法，它们的用法基本相同，只是StringBuilder是线程不安全的，StringBuffer是线程安全的，。-如果只是在单线程中使用字符串缓冲区，则StringBuilder的效率会高些，但是当多线程访问时，最好使用StringBuffer。-综上，在执行效率方面，StringBuilder最高，StringBuffer次之，String最低，对于这种情况，一般而言，如果要操作的数量比较小，应优先使用String类；如果是在单线程下操作大量数据，应优先使用StringBuilder类；如果是在多线程下操作大量数据，应优先使用StringBuilder类。" class="headerlink" title="5. [深入理解String、StringBuffer和StringBuilder类的区别 - 云+社区 - 腾讯云 (tencent.com)](https://cloud.tencent.com/developer/article/1414756#:~:text=StringBuffer与StringBuilder都提供了一系列插入、追加、改变字符串里的字符序列的方法，它们的用法基本相同，只是StringBuilder是线程不安全的，StringBuffer是线程安全的，。.,如果只是在单线程中使用字符串缓冲区，则StringBuilder的效率会高些，但是当多线程访问时，最好使用StringBuffer。. 综上，在执行效率方面，StringBuilder最高，StringBuffer次之，String最低，对于这种情况，一般而言，如果要操作的数量比较小，应优先使用String类；如果是在单线程下操作大量数据，应优先使用StringBuilder类；如果是在多线程下操作大量数据，应优先使用StringBuilder类。.)"></a>5. [深入理解String、StringBuffer和StringBuilder类的区别 - 云+社区 - 腾讯云 (tencent.com)](<a href="https://cloud.tencent.com/developer/article/1414756#:~:text=StringBuffer%E4%B8%8EStringBuilder%E9%83%BD%E6%8F%90%E4%BE%9B%E4%BA%86%E4%B8%80%E7%B3%BB%E5%88%97%E6%8F%92%E5%85%A5%E3%80%81%E8%BF%BD%E5%8A%A0%E3%80%81%E6%94%B9%E5%8F%98%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%87%8C%E7%9A%84%E5%AD%97%E7%AC%A6%E5%BA%8F%E5%88%97%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%8C%E5%AE%83%E4%BB%AC%E7%9A%84%E7%94%A8%E6%B3%95%E5%9F%BA%E6%9C%AC%E7%9B%B8%E5%90%8C%EF%BC%8C%E5%8F%AA%E6%98%AFStringBuilder%E6%98%AF%E7%BA%BF%E7%A8%8B%E4%B8%8D%E5%AE%89%E5%85%A8%E7%9A%84%EF%BC%8CStringBuffer%E6%98%AF%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84%EF%BC%8C%E3%80%82.,%E5%A6%82%E6%9E%9C%E5%8F%AA%E6%98%AF%E5%9C%A8%E5%8D%95%E7%BA%BF%E7%A8%8B%E4%B8%AD%E4%BD%BF%E7%94%A8%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%BC%93%E5%86%B2%E5%8C%BA%EF%BC%8C%E5%88%99StringBuilder%E7%9A%84%E6%95%88%E7%8E%87%E4%BC%9A%E9%AB%98%E4%BA%9B%EF%BC%8C%E4%BD%86%E6%98%AF%E5%BD%93%E5%A4%9A%E7%BA%BF%E7%A8%8B%E8%AE%BF%E9%97%AE%E6%97%B6%EF%BC%8C%E6%9C%80%E5%A5%BD%E4%BD%BF%E7%94%A8StringBuffer%E3%80%82">https://cloud.tencent.com/developer/article/1414756#:~:text=StringBuffer与StringBuilder都提供了一系列插入、追加、改变字符串里的字符序列的方法，它们的用法基本相同，只是StringBuilder是线程不安全的，StringBuffer是线程安全的，。.,如果只是在单线程中使用字符串缓冲区，则StringBuilder的效率会高些，但是当多线程访问时，最好使用StringBuffer。</a>. 综上，在执行效率方面，StringBuilder最高，StringBuffer次之，String最低，对于这种情况，一般而言，如果要操作的数量比较小，应优先使用String类；如果是在单线程下操作大量数据，应优先使用StringBuilder类；如果是在多线程下操作大量数据，应优先使用StringBuilder类。.)</h4><p><a href="https://blog.csdn.net/weixin_45393094/article/details/104526603">(67条消息) StringBuffer和StringBuilder区别详解（Java面试）_辰兮要努力的博客-CSDN博客_stringbuilder和stringbuffer</a></p>
+<p>String Buffer </p>
+<table>
+<thead>
+<tr>
+<th>String</th>
+<th>不可变</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>StringBUffer</td>
+<td>可变</td>
+<td>线程安全（sychroinzed 关键字修饰gonggobg方法）</td>
+<td>多线程</td>
+</tr>
+<tr>
+<td>StringBuilder</td>
+<td>可变</td>
+<td>线程不安全</td>
+<td>单线程、效率高</td>
+</tr>
+</tbody></table>
+<h4 id="6-反射"><a href="#6-反射" class="headerlink" title="6.反射"></a>6.反射</h4><p>框架的灵魂，主要是因为它赋予了我们在运行时分析类以及执行类中方法的能力。通过反射你可以获取任意一个类的所有属性和方法，你还可以调用这些方法和属性。</p>
+<p>用处：框架，注解，动态代理</p>
+<p>四种获取类对象的方法：Class.forName（全类名）  类名.class   实例对象.getClass() </p>
+<p>xxxClassLoader.loadClass（)</p>
+<h4 id="7-finalize详解-：进行垃圾回收前的资源清理"><a href="#7-finalize详解-：进行垃圾回收前的资源清理" class="headerlink" title="7. finalize详解 ：进行垃圾回收前的资源清理"></a>7. finalize详解 ：进行垃圾回收前的资源清理</h4><p>[java finalize方法总结、GC执行finalize的过程 - ScaleZ - 博客园 (cnblogs.com)](<a href="https://www.cnblogs.com/Smina/p/7189427.html#:~:text=finalize%E7%9A%84%E4%BD%9C%E7%94%A8">https://www.cnblogs.com/Smina/p/7189427.html#:~:text=finalize的作用</a> 1 finalize ()是Object的protected方法，子类可以覆盖该方法以实现资源清理工作，GC在回收对象之前调用该方法。 2 finalize ()与C%2B%2B中的析构函数不是对应的。C%2B%2B中的析构函数调用的时机是确定的（对象离开作用域或delete掉），但Java中的finalize的调用具有不确定性,3 不建议用finalize方法完成“非内存资源”的清理工作，但建议用于：① 清理本地对象 (通过JNI创建的对象)；② 作为确保某些非内存资源 (如Socket、文件等)释放的一个补充：在finalize方法中显式调用其他资源释放方法。其原因可见下文 [finalize的问题])</p>
+<h4 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h4><h2 id="JUC并发编程"><a href="#JUC并发编程" class="headerlink" title="JUC并发编程"></a>JUC并发编程</h2><h3 id="线程安全的实现方法"><a href="#线程安全的实现方法" class="headerlink" title="线程安全的实现方法"></a>线程安全的实现方法</h3><ul>
+<li><p><strong>互斥同步</strong></p>
+<p>synchronized和ReentrantLock</p>
+</li>
+<li><p><strong>非阻塞同步</strong></p>
+<p>CAS指令</p>
+</li>
+<li><p><strong>无同步方案</strong></p>
+<p>可重入代码、栈封闭、线程本地存储（ThreadLocal）</p>
+</li>
+</ul>
+<h4 id="可重入代码"><a href="#可重入代码" class="headerlink" title="可重入代码"></a>可重入代码</h4><p>若一个<a href="https://baike.baidu.com/item/%E7%A8%8B%E5%BA%8F">程序</a>或<a href="https://baike.baidu.com/item/%E5%AD%90%E7%A8%8B%E5%BA%8F">子程序</a>可以安全的被<a href="https://baike.baidu.com/item/%E5%B9%B6%E8%A1%8C">并行</a>执行，则称其为<strong>可重入</strong>；实际上就是不含全局变量，所有数据由线程提供，无论多少线程并行执行只要输入相同的数据都会得到相同的结果。</p>
+<h4 id="1-AQS"><a href="#1-AQS" class="headerlink" title="1. AQS"></a>1. AQS</h4><p><a href="https://blog.csdn.net/mulinsen77/article/details/84583716"> AQS详解</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/197840259">AQS基础——多图详解CLH锁的原理与实现 - 知乎 (zhihu.com)</a></p>
+<p><strong>CLH锁</strong>其实就是一种是基于逻辑队列非线程饥饿的一种自旋公平锁，由于是 Craig、Landin 和 Hagersten三位大佬的发明，因此命名为CLH锁。</p>
+<p>AQS是jUC的核心。CLH锁队列是AQS的核心。</p>
+<p>加锁过程 以及通过前置节点locked的属性的自旋等待还是获取锁的判断；</p>
+<h4 id="2-CAS自旋"><a href="#2-CAS自旋" class="headerlink" title="2.  CAS自旋"></a>2. <a href="https://blog.csdn.net/weixin_43232955/article/details/107452893"> CAS自旋</a><img src="/2022/08/13/java%E5%9F%BA%E7%A1%80/format,png.png" alt="img"></h4><p>num++ 过程 带上ABA问题 版本号或者时间戳</p>
+<h4 id="3-java中的锁"><a href="#3-java中的锁" class="headerlink" title="3. java中的锁"></a>3. java中的锁</h4><p>​	4、公平锁和非公平锁</p>
+<p>公平锁和非公平锁一般是在ReentrantLock里面才会用到，synchronized是非公平锁，获取锁时，所有的线程会有竞争，而且是随机唤醒一个，参考notify和notifyAll，只有一个线程能获得锁，但并不一定是先来的那一个。</p>
+<h4 id="4-sychronized-和reentrantlock-的区别？sychronized-为什么默认非公平锁？"><a href="#4-sychronized-和reentrantlock-的区别？sychronized-为什么默认非公平锁？" class="headerlink" title="4. sychronized 和reentrantlock 的区别？sychronized 为什么默认非公平锁？"></a>4. sychronized 和reentrantlock 的区别？sychronized 为什么默认非公平锁？</h4><p><a href="https://zhuanlan.zhihu.com/p/126085068">面试官：谈谈synchronized与ReentrantLock的区别？ - 知乎 (zhihu.com)</a></p>
+<h4 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h4><h4 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h4><h4 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h4><h2 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h2><h4 id="1-说说JVM模型，哪些数据区有内存溢出？方法区怎么会内存溢出？怎么处理？"><a href="#1-说说JVM模型，哪些数据区有内存溢出？方法区怎么会内存溢出？怎么处理？" class="headerlink" title="1. 说说JVM模型，哪些数据区有内存溢出？方法区怎么会内存溢出？怎么处理？"></a>1. 说说JVM模型，哪些数据区有内存溢出？方法区怎么会内存溢出？怎么处理？</h4><p><a href="https://blog.csdn.net/weixin_46421629/article/details/113989663">(36条消息) 【Java面试题第三期】JVM中哪些地方会出现内存溢出？出现的原因是什么？_IT乐知的博客-CSDN博客</a></p>
+<h4 id="2-导致JVM进行Full-GC的情况及解决"><a href="#2-导致JVM进行Full-GC的情况及解决" class="headerlink" title="2. 导致JVM进行Full GC的情况及解决"></a>2. <a href="https://blog.csdn.net/tianya3530/article/details/88309852">导致JVM进行Full GC的情况及解决</a></h4><h4 id="3-什么是字节码？采用字节码的最大好处是什么-知乎-zhihu-com"><a href="#3-什么是字节码？采用字节码的最大好处是什么-知乎-zhihu-com" class="headerlink" title="3. 什么是字节码？采用字节码的最大好处是什么 - 知乎 (zhihu.com)"></a>3. <a href="https://zhuanlan.zhihu.com/p/137021803">什么是字节码？采用字节码的最大好处是什么 - 知乎 (zhihu.com)</a></h4><p>​	Java源代码—-&gt;编译器—-&gt;jvm可执行的Java字节码(即虚拟指令)—-&gt;jvm—-&gt;jvm中解释器—–&gt;机器可执行的二进制机器码—-&gt;程序运行。</p>
+<h4 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h4><h4 id="5-1"><a href="#5-1" class="headerlink" title="5."></a>5.</h4><h4 id="6-1"><a href="#6-1" class="headerlink" title="6."></a>6.</h4><h4 id="7-1"><a href="#7-1" class="headerlink" title="7."></a>7.</h4><h4 id="8-1"><a href="#8-1" class="headerlink" title="8."></a>8.</h4>]]></content>
+      <categories>
+        <category>java基础</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>JUC</tag>
+        <tag>jvm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>mysql和redis</title>
+    <url>/2022/08/13/mysql%E5%92%8Credis/</url>
+    <content><![CDATA[<h1 id="Mysql面试题"><a href="#Mysql面试题" class="headerlink" title="Mysql面试题"></a>Mysql面试题</h1><h4 id="1-索引使用有哪些注意事项呢？"><a href="#1-索引使用有哪些注意事项呢？" class="headerlink" title="1. 索引使用有哪些注意事项呢？"></a>1. 索引使用有哪些注意事项呢？</h4><ol>
+<li>隐式类型转换，会导致索引失效，例如age字段类型是int，我们where age &#x3D; “1”，这样就会触发隐式类型转换。</li>
+<li>like通配符会导致索引失效。注意：”ABC%“会走range索引，”%ABC”索引才会失效。</li>
+<li>联合索引，查询时的条件列不是联合索引中的第一个列，索引失效。</li>
+<li>对索引字段进行函数运算或算术运算（如，+、-、*、&#x2F;），索引失效。</li>
+<li>索引字段上使用（!&#x3D; 或者 &lt; &gt;，not in）时，会导致索引失效。</li>
+<li>索引字段上使用is null， is not null，可能导致索引失效。</li>
+<li>相join的两个表的字符编码不同，不能命中索引，会导致笛卡尔积的循环计算</li>
+<li>mysql估计使用全表扫描要比使用索引快,则不使用索引</li>
+</ol>
+<h4 id="2-动态sql"><a href="#2-动态sql" class="headerlink" title="2. 动态sql"></a>2. 动态sql</h4><ol>
+<li>动态拼接sql，加where 1 &#x3D; 1</li>
+</ol>
+<p>​		<a href="https://www.cnblogs.com/muhy/p/11941931.html">SQL语句中where 1&#x3D;1的意义 - 永恒的回忆 - 博客园 (cnblogs.com)</a></p>
+<ol start="2">
+<li><strong>用mybatis的动态sql功能</strong></li>
+</ol>
+<p>​		<a href="https://blog.csdn.net/sdgihshdv/article/details/78258886">(72条消息) 动态SQL_陈伟chenwei的博客-CSDN博客_动态sql</a></p>
+<h4 id="3-数据库索引的原理，为什么要用-B-树，为什么不用其他树？"><a href="#3-数据库索引的原理，为什么要用-B-树，为什么不用其他树？" class="headerlink" title="3. 数据库索引的原理，为什么要用 B+树，为什么不用其他树？"></a>3. 数据库索引的原理，为什么要用 B+树，为什么不用其他树？</h4><ol>
+<li><p><strong>二叉树</strong></p>
+<p>1.1 当数据量大时，树的高度会比较高（树的高度决定着它的IO操作次数，IO操作耗时大），查询会比较慢。</p>
+<p>2.2  每个磁盘块（节点&#x2F;页）保存的数据太小（IO本来是耗时操作，每次IO只能读取到一个关键字，显然不合适），没有很好的利用	操作磁盘IO的数据交换特性，也没有利用好磁盘IO的预读能力（空间局部性原理），从而带来频繁的IO操作。</p>
+</li>
+</ol>
+<p>​	2. <strong>平衡二叉树</strong>可是每个节点只存储一个键值和数据</p>
+<p>​	<strong>3. 那为什么不是B树而是B+树呢？</strong></p>
+<p>​		<strong>B树和B+树的区别：</strong></p>
+<ul>
+<li>所有关键字存储在叶子节点出现,内部节点(非叶子节点并不存储真正的 data)</li>
+<li>为所有叶子结点增加了一个链指针</li>
+</ul>
+<p>		</p>
+<p>​		1）B+树叶节点两两相连可大大增加区间访问性，可使用在范围查询等，而B-树每个节点 key 和 data 在一起，则无法区间查找。<br>​		2）B+Tree磁盘读写能力更强,B+树单次磁盘 IO 的信息量大于B-树（叶子节点不保存真实数据，因此一个磁盘块能保存的关键字更			多，因此每次加载的关键字越多）<br>​		3）B+Tree扫表和扫库能力更强（B-Tree树需要扫描整颗树，B+Tree树只需要扫描叶子节点）</p>
+<p>​		4)  B+树可以很好的利用局部性原理，若我们访问节点 key为 50，则 key 为 55、60、62 的节点将来也可能被访问，我们可以利用磁			盘预读原理提前将这些数据读入内存，减少了磁盘 IO 的次数。</p>
+<h4 id="4-主键就是聚集索引"><a href="#4-主键就是聚集索引" class="headerlink" title="4.主键就是聚集索引"></a>4.<strong>主键就是聚集索引</strong></h4><p>​	主键默认是聚集索引，但是实际情况中聚合索引不一定要用到主键上。</p>
+<p>​	例子：</p>
+<p>​			在办公自动化系统中，无论是系统首页显示的需要用户签收的文件、会议还是用户进行文件查询等任何情况下进行数据查询都离不开字段的是“日期”还有用户本身的“用户名”。</p>
+<p>  　　通常，办公自动化的首页会显示每个用户尚未签收的文件或会议。虽然我们的where语句可以仅仅限制当前用户尚未签收的情况，但如果您的系统已<strong>建立了很长时间，并且数据量很大</strong>，那么，每次每个用户打开首页的时候都进行一次全表扫描，这样做意义是不大的，绝大多数的用户1个月前的文件都已经浏览过了，这样做只能徒增数据库的开销而已。事实上，我们完全可以让用户打开系统首页时，数据库仅仅查询这个用户近3个月来未阅览的文件，通过“日期”这个字段来限制表扫描，提高查询速度。如果您的办公自动化系统已经建立的2年，那么您的首页显示速度理论上将是原来速度8倍，甚至更快。</p>
+<h4 id="5-聚集索引"><a href="#5-聚集索引" class="headerlink" title="5. 聚集索引"></a>5. 聚集索引</h4><p>​	聚集索引是一种索引，该索引中键值的<a href="https://baike.baidu.com/item/%E9%80%BB%E8%BE%91%E9%A1%BA%E5%BA%8F">逻辑顺序</a>决定了表中相应行的物理顺序。</p>
+<p>​	逻辑顺序相邻的列在磁盘上连续分布；</p>
+<p>​	<strong>建立聚集索引要求的</strong>：“既不能绝大多数都相同，又不能只有极少数相同”的规则</p>
+<p>​	<strong>适用情况：</strong></p>
+<pre><code>    1. 使用BETWEEN,&gt;,&gt;=,&lt;或&lt;=返回一个范围值的列
+    1. 被连续访问的列
+    1. 返回大型[结果集](https://baike.baidu.com/item/结果集)的查询
+    1. 经常被使用连接或GROUP BY子句的查询访问的列
+</code></pre>
+<h4 id="6-主从复制的原理"><a href="#6-主从复制的原理" class="headerlink" title="6. 主从复制的原理"></a>6. <strong>主从复制的原理</strong></h4><p>首先放一张Mysql主从复制的原理图，总的来说Mysql的主从复制原理还是比较好理解的，原理非常的简单。</p>
+<p><img src="/2022/08/13/mysql%E5%92%8Credis/v2-12f36a0aa2ea88020809173182e54e73_720w.jpg" alt="img"></p>
+<p>Mysql的主从复制中主要有三个线程：<code>master（binlog dump thread）、slave（I/O thread 、SQL thread）</code>，Master一条线程和Slave中的两条线程。</p>
+<p><code>master（binlog dump thread）</code>主要负责Master库中有数据更新的时候，会按照<code>binlog</code>格式，将更新的事件类型写入到主库的<code>binlog</code>文件中。</p>
+<p>并且，Master会创建<code>log dump</code>线程通知Slave主库中存在数据更新，这就是为什么主库的binlog日志一定要开启的原因。</p>
+<p><code>I/O thread</code>线程在Slave中创建，该线程用于请求Master，Master会返回binlog的名称以及当前数据更新的位置、binlog文件位置的副本。</p>
+<p>然后，将<code>binlog</code>保存在 <strong>「relay log（中继日志）」</strong> 中，中继日志也是记录数据更新的信息。</p>
+<p>SQL线程也是在Slave中创建的，当Slave检测到中继日志有更新，就会将更新的内容同步到Slave数据库中，这样就保证了主从的数据的同步。</p>
+<p>以上就是主从复制的过程，当然，主从复制的过程有不同的策略方式进行数据的同步，主要包含以下几种：</p>
+<ol>
+<li><strong>「同步策略」</strong>：Master会等待所有的Slave都回应后才会提交，这个主从的同步的性能会严重的影响。</li>
+<li><strong>「半同步策略」</strong>：Master至少会等待一个Slave回应后提交。</li>
+<li><strong>「异步策略」</strong>：Master不用等待Slave回应就可以提交。</li>
+<li><strong>「延迟策略」</strong>：Slave要落后于Master指定的时间。</li>
+</ol>
+<p>对于不同的业务需求，有不同的策略方案，但是一般都会采用最终一致性，不会要求强一致性，毕竟强一致性会严重影响性能。</p>
+<h4 id="7-SQL查询A表中有B表中没有的数据"><a href="#7-SQL查询A表中有B表中没有的数据" class="headerlink" title="7. SQL查询A表中有B表中没有的数据"></a>7. SQL查询A表中有B表中没有的数据</h4><img src="/2022/08/13/mysql%E5%92%8Credis/image-20220318200549443.png" alt="image-20220318200549443" style="zoom:80%;">
+
+<h4 id="8-游戏排行榜算法设计实现"><a href="#8-游戏排行榜算法设计实现" class="headerlink" title="8. 游戏排行榜算法设计实现"></a>8. 游戏排行榜算法设计实现</h4><p>​	<a href="https://www.cnblogs.com/leestar54/p/13200549.html#top">排行榜的简单设计思路 - leestar54 - 博客园 (cnblogs.com)</a></p>
+<ol>
+<li><p>​	<strong>使用mysql：</strong></p>
+<p>建立用户积分表，排行榜需要查询topN，在积分上建立索引，limit N；</p>
+<h5 id="加缓存"><a href="#加缓存" class="headerlink" title="加缓存"></a>加缓存</h5><p>对于mysql来说，索引的增删查改也是需要维护的，所以如果对于需要频繁修改的排序字段，并且是非实时的排序需求（例如按小时、按天、按月等），我们可以考虑在写入前加缓存，避免频繁操作数据库，影响其性能。<br>例如：一分钟可能需要增减score字段值50次，那么我们可以由缓存先接手请求，等一分钟后，再统一写入数据库，那么这一分钟数据库操作的次数就少了50次，另外读取排行的时候也可以加缓存，效果显著。<br>当然缓存期越长，提升越多，但是也要考虑到缓存失效导致数据丢失等情况，来保证数据的一致性。</p>
+</li>
+<li><p><strong>积分排名数组实现</strong></p>
+<p>如有1百万用户进行排名，就用一个大小为1，000，000的数组表示积分和排名的对应关系，其中rank[ s ]表示积分s所对应的排名。初始化时，rank数组可以由user_score表在O(n)的复杂度内计算而来。用户排名的查询和更新基于这个数组来进行。查询积分s所对应的排名直接返回rank[ s ]即可，复杂度为O(1)；当用户积分从s变为s+n，只需要把rank[ s ]到rank[s+n-1]这n个元素的值增加1即可，复杂度为O(n)。</p>
+</li>
+<li><p><strong>跳表</strong></p>
+<p><a href="https://www.cnblogs.com/leestar54/p/13200549.html">排行榜的简单设计思路 - leestar54 - 博客园 (cnblogs.com)</a></p>
+<p><strong>redis的有序集合(sorted set)</strong></p>
+<p>有序集合是通过包含跳表和哈希表的双端口数据结构实现的，因此，每次添加元素时，Redis的复杂度都是O（log（N））。当我们要求排序的元素时，Redis根本不需要做任何工作，它已经全部排序了</p>
+</li>
+</ol>
+<h4 id="9-三范式"><a href="#9-三范式" class="headerlink" title="9. 三范式"></a>9. 三范式</h4><pre><code>1. 字段不可再分
+2. 非主键字段完全依赖主键字段，不可产生部分依赖；
+3. 非主键字段之间不可产生依赖。
+</code></pre>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="1-sql与nosql的区别"><a href="#1-sql与nosql的区别" class="headerlink" title="1. sql与nosql的区别"></a>1. sql与nosql的区别</h2><p><img src="/2022/08/13/mysql%E5%92%8Credis/image-20220415101052047.png" alt="image-20220415101052047"></p>
+<h2 id="2-mysql与redis一致性问题认识MySQL和Redis的数据一致性问题-云-社区-腾讯云-tencent-com"><a href="#2-mysql与redis一致性问题认识MySQL和Redis的数据一致性问题-云-社区-腾讯云-tencent-com" class="headerlink" title="2. mysql与redis一致性问题认识MySQL和Redis的数据一致性问题 - 云+社区 - 腾讯云 (tencent.com)"></a>2. mysql与redis一致性问题<a href="https://cloud.tencent.com/developer/article/1917325">认识MySQL和Redis的数据一致性问题 - 云+社区 - 腾讯云 (tencent.com)</a></h2><h3 id="2-1-针对只读缓存（先更新数据库再删除缓存）"><a href="#2-1-针对只读缓存（先更新数据库再删除缓存）" class="headerlink" title="2.1 针对只读缓存（先更新数据库再删除缓存）"></a><strong>2.1 针对只读缓存（先更新数据库再删除缓存）</strong></h3><p>只读缓存：新增数据时，直接写入数据库；更新（修改&#x2F;删除）数据时，先删除缓存。 后续，访问这些增删改的数据时，会发生缓存缺失，进而查询数据库，更新缓存。</p>
+<ul>
+<li><strong>新增数据时</strong> ，写入数据库；访问数据时，缓存缺失，查数据库，更新缓存（始终是处于”数据一致“的状态，不会发生数据不一致性问题)</li>
+</ul>
+<p><img src="/2022/08/13/mysql%E5%92%8Credis/1620.png" alt="img"></p>
+<ul>
+<li><strong>更新（修改&#x2F;删除）数据时</strong> ，会有个时序问题：更新数据库与删除缓存的顺序（这个过程会发生数据不一致性问题）</li>
+</ul>
+<p><img src="/2022/08/13/mysql%E5%92%8Credis/1620-16603835178821.png" alt="img"></p>
+<p>在更新数据的过程中，可能会有如下问题：</p>
+<ul>
+<li>无并发请求下，其中一个操作失败的情况</li>
+<li>并发请求下，其他线程可能会读到旧值</li>
+</ul>
+<p>因此，要想达到数据一致性，需要保证两点：</p>
+<ul>
+<li>无并发请求下，保证A和B步骤都能成功执行</li>
+<li>并发请求下，在A和B步骤的间隔中，避免或消除其他线程的影响</li>
+</ul>
+<p>接下来，我们针对有&#x2F;无并发场景，进行分析并使用不同的策略。</p>
+<h4 id="A-无并发情况"><a href="#A-无并发情况" class="headerlink" title="A. 无并发情况"></a><strong>A. 无并发情况</strong></h4><p>无并发请求下，在更新数据库和删除缓存值的过程中，因为操作被拆分成两步，那么就很有可能存在“步骤1成功，步骤2失败” 的情况发生（由于单线程中步骤1和步骤2是串行执行的，不太可能会发生 “步骤2成功，步骤1失败” 的情况）。</p>
+<p><strong>(1) 先删除缓存，再更新数据库</strong> </p>
+<p><img src="/2022/08/13/mysql%E5%92%8Credis/1620-16603835178822.png" alt="img"></p>
+<p><strong>(2) 先更新数据库，再删除缓存</strong>  </p>
+<p><img src="/2022/08/13/mysql%E5%92%8Credis/1620-16603835178823.png" alt="img"></p>
+<table>
+<thead>
+<tr>
+<th align="left">执行时序</th>
+<th align="left">潜在问题</th>
+<th align="left">结果</th>
+<th align="left">是否存在一致性问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">先删除缓存，后更新数据库</td>
+<td align="left">删除缓存成功，更新数据库失败</td>
+<td align="left">请求无法命中缓存，读取数据库旧值</td>
+<td align="left">是</td>
+</tr>
+<tr>
+<td align="left">先更新数据库，后删除缓存</td>
+<td align="left">更新数据库成功，删除缓存失败</td>
+<td align="left">请求命中缓存，读取缓存旧值</td>
+<td align="left">是</td>
+</tr>
+</tbody></table>
+<p><strong>解决策略：</strong> </p>
+<h5 id="a-消息队列-异步重试"><a href="#a-消息队列-异步重试" class="headerlink" title="a.消息队列+异步重试"></a><strong>a.消息队列+异步重试</strong></h5><p>无论使用哪一种执行时序，可以在执行步骤1时，将步骤2的请求写入消息队列，当步骤2失败时，就可以使用重试策略，对失败操作进行 “补偿”。 </p>
+<p><img src="/2022/08/13/mysql%E5%92%8Credis/1620-16603835178824.png" alt="img"></p>
+<p><strong>具体步骤如下：</strong></p>
+<ol>
+<li>把要删除缓存值或者是要更新数据库值操作生成消息，暂存到消息队列中（例如使用 Kafka 消息队列）；</li>
+<li>当删除缓存值或者是更新数据库值操作成功时，把这些消息从消息队列中去除（丢弃），以免重复操作；</li>
+<li>当删除缓存值或者是更新数据库值操作失败时，执行失败策略，重试服务从消息队列中重新读取（消费）这些消息，然后再次进行删除或更新；</li>
+<li>删除或者更新失败时，需要再次进行重试，重试超过的一定次数，向业务层发送报错信息。</li>
+</ol>
+<h5 id="b-订阅Binlog变更日志"><a href="#b-订阅Binlog变更日志" class="headerlink" title="b.订阅Binlog变更日志"></a><strong>b.订阅Binlog变更日志</strong></h5><ul>
+<li>创建更新缓存服务，接收数据变更的MQ消息，然后消费消息，更新&#x2F;删除Redis中的缓存数据；</li>
+<li>使用 Binlog 实时更新&#x2F;删除Redis 缓存。利用Canal，即将负责更新缓存的服务伪装成一个 MySQL 的从节点，从 MySQL 接收 Binlog，解析 Binlog 之后，得到实时的数据变更信息，然后根据变更信息去更新&#x2F;删除 Redis 缓存；</li>
+<li>MQ+Canal策略，将Canal Server接收到的Binlog数据直接投递到MQ进行解耦，使用MQ异步消费Binlog日志，以此进行数据同步；</li>
+</ul>
+<p>不管用 MQ&#x2F;Canal或者MQ+Canal的策略来异步更新缓存，对整个更新服务的数据可靠性和实时性要求都比较高，如果产生数据丢失或者更新延时情况，会造成MySQL和Redis 中的数据不一致。因此，使用这种策略时，需要考虑出现不同步问题时的降级或补偿方案。</p>
+<h4 id="B-高并发情况"><a href="#B-高并发情况" class="headerlink" title="B. 高并发情况"></a><strong>B. 高并发情况</strong></h4><p>使用以上策略后，可以保证在单线程&#x2F;无并发场景下的数据一致性。但是，在高并发场景下，由于数据库层面的读写并发，会引发的数据库与缓存数据不一致的问题（本质是后发生的读请求先返回了）</p>
+<h5 id="1-先删除缓存，再更新数据库"><a href="#1-先删除缓存，再更新数据库" class="headerlink" title="(1) 先删除缓存，再更新数据库"></a><strong>(1) 先删除缓存，再更新数据库</strong></h5><p>假设线程 A 删除缓存值后，由于网络延迟等原因导致未及更新数据库，而此时，线程 B 开始读取数据时会发现缓存缺失，进而去查询数据库。而当线程 B 从数据库读取完数据、更新了缓存后，线程 A 才开始更新数据库，此时，会导致缓存中的数据是旧值，而数据库中的是最新值，产生“数据不一致”。其本质就是，本应后发生的“B线程-读请求” 先于 “A线程-写请求” 执行并返回了。</p>
+<table>
+<thead>
+<tr>
+<th align="left">时间</th>
+<th align="left">线程A</th>
+<th align="left">线程B</th>
+<th align="left">问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">T1</td>
+<td align="left">删除数据X的缓存值</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T2</td>
+<td align="left"></td>
+<td align="left">1.读取缓存数据X，缓存缺失，从数据库读取数据X</td>
+<td align="left">线程B读取到旧值</td>
+</tr>
+<tr>
+<td align="left">T3</td>
+<td align="left"></td>
+<td align="left">2.将数据X的值写入缓存</td>
+<td align="left">导致其他线程读到旧值</td>
+</tr>
+<tr>
+<td align="left">T4</td>
+<td align="left">更新数据库中的数据X的值</td>
+<td align="left"></td>
+<td align="left">缓存是旧值，数据库是旧值，导致数据不一致</td>
+</tr>
+</tbody></table>
+<p>或者</p>
+<table>
+<thead>
+<tr>
+<th align="left">时间</th>
+<th align="left">线程A</th>
+<th align="left">线程B</th>
+<th align="left">问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">T1</td>
+<td align="left">删除数据X的缓存值</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T2</td>
+<td align="left"></td>
+<td align="left">1.读取缓存数据X，缓存缺失，从数据库读取数据X</td>
+<td align="left">线程B读取到旧值</td>
+</tr>
+<tr>
+<td align="left">T3</td>
+<td align="left">更新数据库中的数据X的值</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T4</td>
+<td align="left"></td>
+<td align="left">2.将数据X的值写入缓存</td>
+<td align="left">缓存是旧值，数据库是旧值，导致数据不一致</td>
+</tr>
+</tbody></table>
+<p><strong>解决策略：</strong> </p>
+<h6 id="a-设置缓存过期时间-延时双删"><a href="#a-设置缓存过期时间-延时双删" class="headerlink" title="a.设置缓存过期时间 + 延时双删"></a><strong>a.设置缓存过期时间 + 延时双删</strong></h6><p>通过设置缓存过期时间，若发生上述淘汰缓存失败的情况，则在缓存过期后，读请求仍然可以从DB中读取最新数据并更新缓存，可减小数据不一致的影响范围。虽然在一定时间范围内数据有差异，但可以保证数据的最终一致性。</p>
+<p>此外，还可以通过延时双删进行保障：在线程 A 更新完数据库值以后，让它先 sleep 一小段时间，确保线程 B 能够先从数据库读取数据，再把缺失的数据写入缓存，然后，线程 A 再进行删除。后续，其它线程读取数据时，发现缓存缺失，会从数据库中读取最新值。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">redis.<span class="title function_">delKey</span>(X)</span><br><span class="line">db.<span class="title function_">update</span>(X)</span><br><span class="line"><span class="title class_">Thread</span>.<span class="title function_">sleep</span>(N)</span><br><span class="line">redis.<span class="title function_">delKey</span>(X)</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<p>sleep时间：在业务程序运行的时候，统计下线程读数据和写缓存的操作时间，以此为基础来进行估算</p>
+<table>
+<thead>
+<tr>
+<th align="left">时间</th>
+<th align="left">线程A</th>
+<th align="left">线程C</th>
+<th align="left">线程D</th>
+<th align="left">问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">T5</td>
+<td align="left">sleep(N)</td>
+<td align="left">读取到缓存旧值</td>
+<td align="left"></td>
+<td align="left">其他线程可能在此期间读到旧值</td>
+</tr>
+<tr>
+<td align="left">T6</td>
+<td align="left">删除数据X的缓存值</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T7</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">缓存缺失，从数据库读取数据X的最新值</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>：如果难以接受sleep这种写法，可以使用延时队列进行替代。</p>
+<p>先删除缓存值再更新数据库，有可能导致请求因缓存缺失而访问数据库，给数据库带来压力，也就是缓存穿透的问题。针对缓存穿透问题，可以用缓存空结果、布隆过滤器进行解决。</p>
+<h5 id="2-先更新数据库，再删除缓存"><a href="#2-先更新数据库，再删除缓存" class="headerlink" title="(2) 先更新数据库，再删除缓存"></a><strong>(2) 先更新数据库，再删除缓存</strong></h5><p>如果线程 A 更新了数据库中的值，但还没来得及删除缓存值，线程 B 就开始读取数据了，那么此时，线程 B 查询缓存时，发现缓存命中，就会直接从缓存中读取旧值。其本质也是，本应后发生的“B线程-读请求” 先于 “A线程-删除缓存” 执行并返回了。</p>
+<table>
+<thead>
+<tr>
+<th align="left">时间</th>
+<th align="left">线程A</th>
+<th align="left">线程B</th>
+<th align="left">潜在问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">T1</td>
+<td align="left">更新数据库中的数据X</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T2</td>
+<td align="left"></td>
+<td align="left">读取数据X，命中缓存，从缓存中读取X，读取旧值</td>
+<td align="left">线程A尚未删除缓存值，导致线程B读到旧值</td>
+</tr>
+<tr>
+<td align="left">T3</td>
+<td align="left">删除缓存的数据X</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>或者，在”先更新数据库，再删除缓存”方案下，“读写分离 + 主从库延迟”也会导致不一致：</p>
+<table>
+<thead>
+<tr>
+<th align="left">时间</th>
+<th align="left">线程A</th>
+<th align="left">线程B</th>
+<th align="left">MySQL集群</th>
+<th align="left">潜在问题</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">T1</td>
+<td align="left">更新主库 X &#x3D; 2（原值 X &#x3D; 1）</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T2</td>
+<td align="left">删除缓存</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T3</td>
+<td align="left"></td>
+<td align="left">查询缓存，没有命中，查询从库，得到旧值（从库 X &#x3D; 1）</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T4</td>
+<td align="left"></td>
+<td align="left">将旧值写入缓存（X &#x3D; 1）</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">T5</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">从库同步完成（主从库 X &#x3D; 2）</td>
+<td align="left">最终 X 的值在缓存中是 1（旧值），在主从库中是 2（新值），也发生不一致</td>
+</tr>
+</tbody></table>
+<p><strong>解决方案：</strong> </p>
+<p><strong>a.延迟消息</strong> </p>
+<p>凭借经验发送「延迟消息」到队列中，延迟删除缓存，同时也要控制主从库延迟，尽可能降低不一致发生的概率</p>
+<p><strong>b.订阅binlog，异步删除</strong> </p>
+<p>通过数据库的binlog来异步淘汰key，利用工具(canal)将binlog日志采集发送到MQ中，然后通过ACK机制确认处理删除缓存。</p>
+<p><strong>d.加锁</strong></p>
+<p>更新数据时，加写锁；查询数据时，加读锁 保证两步操作的“原子性”，使得操作可以串行执行。“<strong>原子性”的本质是什么？不可分割只是外在表现，其本质是多个资源间有一致性的要求，操作的中间状态对外不可见。</strong> </p>
+<p><img src="/2022/08/13/mysql%E5%92%8Credis/1620-16603835178825.png" alt="img"></p>
+<h5 id="优先使用“先更新数据库再删除缓存”，原因："><a href="#优先使用“先更新数据库再删除缓存”，原因：" class="headerlink" title="优先使用“先更新数据库再删除缓存”，原因："></a>优先使用“先更新数据库再删除缓存”，原因：</h5><ol>
+<li>先删除缓存值再更新数据库，有可能导致请求因缓存缺失而访问数据库，给数据库带来压力；</li>
+<li>业务应用中读取数据库和写缓存的时间有时不好估算，进而导致延迟双删中的sleep时间不好设置。</li>
+</ol>
+<h3 id="2-2-针对读写缓存（先更新缓存再更新数据库）"><a href="#2-2-针对读写缓存（先更新缓存再更新数据库）" class="headerlink" title="2.2 针对读写缓存（先更新缓存再更新数据库）"></a><strong>2.2 针对读写缓存（先更新缓存再更新数据库）</strong></h3><p>读写缓存：增删改在缓存中进行，并采取相应的回写策略，同步数据到数据库中</p>
+<ul>
+<li>同步直写：使用事务，保证缓存和数据更新的原子性，并进行失败重试（如果Redis 本身出现故障，会降低服务的性能和可用性）</li>
+<li>异步回写：写缓存时不同步写数据库，等到数据从缓存中淘汰时，再写回数据库（没写回数据库前，缓存发生故障，会造成数据丢失） 该策略在秒杀场中有见到过，业务层直接对缓存中的秒杀商品库存信息进行操作，一段时间后再回写数据库。</li>
+</ul>
+<p>一致性：同步直写 &gt; 异步回写 因此，对于读写缓存，要保持数据强一致性的主要思路是：利用同步直写 同步直写也存在两个操作的时序问题：更新数据库和更新缓存</p>
+<h4 id="A-无并发情况-与只读缓存处理措施一样"><a href="#A-无并发情况-与只读缓存处理措施一样" class="headerlink" title="A. 无并发情况(与只读缓存处理措施一样)"></a><strong>A. 无并发情况</strong>(与只读缓存处理措施一样)</h4><table>
+<thead>
+<tr>
+<th align="left">执行顺序</th>
+<th align="left">潜在问题</th>
+<th align="left">结果</th>
+<th align="left">是否存在一致性问题</th>
+<th align="left">解决策略</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">先更新缓存，后更新数据库</td>
+<td align="left">更新缓存成功，更新数据库失败</td>
+<td align="left">数据库中为旧值</td>
+<td align="left">是</td>
+<td align="left">消息队列+重试机制</td>
+</tr>
+<tr>
+<td align="left">先更新数据库，后更新缓存</td>
+<td align="left">更新数据库成功，更新缓存失败</td>
+<td align="left">请求命中缓存，读取缓存旧值</td>
+<td align="left">是</td>
+<td align="left">消息队列+重试机制；订阅Binlog日志</td>
+</tr>
+</tbody></table>
+<h4 id="B-高并发情况-1"><a href="#B-高并发情况-1" class="headerlink" title="B. 高并发情况"></a><strong>B. 高并发情况</strong></h4><p>有四种场景会造成数据不一致：</p>
+<table>
+<thead>
+<tr>
+<th align="left">时序</th>
+<th align="left">并发类型</th>
+<th align="left">潜在问题</th>
+<th align="left">影响程度</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">先更新数据库，再更新缓存</td>
+<td align="left">写+读并发</td>
+<td align="left">1.线程A先更新数据库 2.线程B读取数据，命中缓存，读取到旧值 3.线程A更新缓存成功，后续的读请求会命中缓存得到最新值</td>
+<td align="left">这种场景下，线程A未更新完缓存之前，在这期间的读请求会短暂读到旧值，对业务短暂影响</td>
+</tr>
+<tr>
+<td align="left"><strong>先更新缓存，再更新数据库</strong></td>
+<td align="left">写+读并发</td>
+<td align="left">1.线程A先更新缓存成功 2.线程B读取数据，此时线程B命中缓存，读取到最新值后返回 3.线程A更新数据库成功</td>
+<td align="left">这种场景下，虽然线程A还未更新完数据库，数据库会与缓存存在短暂不一致，但在这之前进来的读请求都能直接命中缓存，获取到最新值对业务影响较小</td>
+</tr>
+<tr>
+<td align="left">先更新数据库，再更新缓存</td>
+<td align="left">写+写并发</td>
+<td align="left">1.线程A和线程B同时更新同一条数据 2.更新数据库的顺序是先A后B 3.更新缓存时顺序是先B后A</td>
+<td align="left">会导致数据库和缓存的不一致，对业务影响较大</td>
+</tr>
+<tr>
+<td align="left">先更新缓存，再更新数据库</td>
+<td align="left">写+写并发</td>
+<td align="left">1.线程A和线程B同时更新同一条数据 2.更新缓存的顺序是先A后B 3.更新数据库的顺序是先B后A</td>
+<td align="left">会导致数据库和缓存的不一致，对业务影响较大</td>
+</tr>
+</tbody></table>
+<p>针对场景1和2的解决方案是：保存请求对缓存的读取记录，延时消息比较，发现不一致后，做业务补偿 针对场景3和4的解决方案是：对于写请求，需要配合分布式锁使用。写请求进来时，针对同一个资源的修改操作，先加分布式锁，保证同一时间只有一个线程去更新数据库和缓存；没有拿到锁的线程把操作放入到队列中，延时处理。用这种方式保证多个线程操作同一资源的顺序性，以此保证一致性。 </p>
+<p><img src="/2022/08/13/mysql%E5%92%8Credis/1620-16603835178826.png" alt="img"></p>
+<p> 其中，分布式锁的实现可以使用以下策略：</p>
+<table>
+<thead>
+<tr>
+<th align="left">分布式锁策略</th>
+<th align="left">实现原理</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">乐观锁</td>
+<td align="left">使用版本号、updatetime；缓存中，只允许高版本覆盖低版本</td>
+</tr>
+<tr>
+<td align="left">Watch实现Redis乐观锁+redis事务</td>
+<td align="left">watch监控redisKey的状态值，创建redis事务，key+1，执行事务，key被修改过则回滚</td>
+</tr>
+<tr>
+<td align="left">setnx</td>
+<td align="left">获取锁：set&#x2F;setnx；释放锁：del命令&#x2F;lua脚本</td>
+</tr>
+<tr>
+<td align="left">Redisson分布式锁</td>
+<td align="left">利用Redis的Hash结构作为储存单元，将业务指定的名称作为key，将随机UUID和线程ID作为field，最后将加锁的次数作为value来储存；线程安全</td>
+</tr>
+</tbody></table>
+<h3 id="2-3-强一致性策略"><a href="#2-3-强一致性策略" class="headerlink" title="2.3 强一致性策略"></a><strong>2.3 强一致性策略</strong></h3><p>上述策略只能保证数据的最终一致性。 要想做到强一致，最常见的方案是 2PC、3PC、Paxos、Raft 这类一致性协议，但它们的性能往往比较差，而且这些方案也比较复杂，还要考虑各种容错问题。 如果业务层要求必须读取数据的强一致性，可以采取以下策略：</p>
+<p><strong>（1）暂存并发读请求</strong> </p>
+<p>在更新数据库时，先在 Redis 缓存客户端暂存并发读请求，等数据库更新完、缓存值删除后，再读取数据，从而保证数据一致性。</p>
+<p><strong>（2）串行化</strong> </p>
+<p>读写请求入队列，工作线程从队列中取任务来依次执行</p>
+<ol>
+<li>修改服务Service连接池，id取模选取服务连接，能够保证同一个数据的读写都落在同一个后端服务上</li>
+<li>修改数据库DB连接池，id取模选取DB连接，能够保证同一个数据的读写在数据库层面是串行的</li>
+</ol>
+<p><strong>（3）使用Redis分布式读写锁</strong> </p>
+<p>将淘汰缓存与更新库表放入同一把写锁中，与其它读请求互斥，防止其间产生旧数据。读写互斥、写写互斥、读读共享，可满足读多写少的场景数据一致，也保证了并发性。并根据逻辑平均运行时间、响应超时时间来确定过期时间。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">public <span class="keyword">void</span> <span class="title function_">write</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title class_">Lock</span> writeLock = redis.<span class="title function_">getWriteLock</span>(lockKey);</span><br><span class="line">    writeLock.<span class="title function_">lock</span>();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        redis.<span class="title function_">delete</span>(key);</span><br><span class="line">        db.<span class="title function_">update</span>(record);</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        writeLock.<span class="title function_">unlock</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public <span class="keyword">void</span> <span class="title function_">read</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (caching) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// no cache</span></span><br><span class="line">    <span class="title class_">Lock</span> readLock = redis.<span class="title function_">getReadLock</span>(lockKey);</span><br><span class="line">    readLock.<span class="title function_">lock</span>();</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        record = db.<span class="title function_">get</span>();</span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        readLock.<span class="title function_">unlock</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    redis.<span class="title function_">set</span>(key, record);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复制</p>
+<h3 id="2-4-小结"><a href="#2-4-小结" class="headerlink" title="2.4 小结"></a><strong>2.4 小结</strong></h3><table>
+<thead>
+<tr>
+<th align="left">缓存类型</th>
+<th align="left">一致性主要策略</th>
+<th align="left">优点</th>
+<th align="left">缺点</th>
+<th align="left">适用场景</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">读写缓存</td>
+<td align="left">更新数据库+更新缓存</td>
+<td align="left">缓存中一直会有数据，如果更新操作后会立即再次访问，可以直接命中缓存，能够降低读请求对于数据库的压力</td>
+<td align="left">如果更新后的数据，之后很少再被访问到，会导致缓存中保留的不是最热的数据，缓存利用率不高，浪费缓存资源</td>
+<td align="left">读写相当</td>
+</tr>
+<tr>
+<td align="left">只读缓存</td>
+<td align="left">更新数据库+删除缓存</td>
+<td align="left">只读缓存中保留的都是热数据，缓存利用率高</td>
+<td align="left">删除缓存导致缓存缺失和再加载的过程；缓存缺失时，导致大量请求落到数据库，压垮数据库</td>
+<td align="left">读多写少</td>
+</tr>
+</tbody></table>
+<p>针对读写缓存时：同步直写，更新数据库+更新缓存</p>
+<table>
+<thead>
+<tr>
+<th align="left">操作顺序</th>
+<th align="left">是否有并发请求</th>
+<th align="left">潜在问题</th>
+<th align="left">结果</th>
+<th align="left">应对方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">先更新数据库，再更新缓存</td>
+<td align="left">无</td>
+<td align="left">数据库更新成功，但更新缓存失败</td>
+<td align="left">请求从缓存读到旧数据</td>
+<td align="left">重试缓存更新</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">写+读</td>
+<td align="left">线程A未更新完缓存之前，线程B的读请求会短暂读到旧值</td>
+<td align="left">请求从短暂缓存读到旧数据</td>
+<td align="left">保存读取记录，做补偿</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">写+写</td>
+<td align="left">更新数据库的顺序是先A后B，但更新缓存时顺序是先B后A</td>
+<td align="left">数据库和缓存数据不一致</td>
+<td align="left">分布式锁</td>
+</tr>
+<tr>
+<td align="left">先更新缓存，再更新数据库</td>
+<td align="left">无</td>
+<td align="left">缓存更新成功，但更新数据库失败</td>
+<td align="left">数据库存在旧值</td>
+<td align="left">重试数据库更新</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">写+读</td>
+<td align="left">线程A还未更新完数据库，但在这之前进来的读请求都能直接命中缓存，获取到最新值</td>
+<td align="left">数据库与缓存存在短暂不一致，但不影响业务</td>
+<td align="left">MQ确认数据库更新成功</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">写+写</td>
+<td align="left">更新缓存的顺序是先A后B，但更新数据库时顺序是先B后A</td>
+<td align="left">数据库和缓存数据不一致</td>
+<td align="left">分布式锁</td>
+</tr>
+</tbody></table>
+<p>针对只读缓存时：更新数据库+删除缓存</p>
+<table>
+<thead>
+<tr>
+<th align="left">操作顺序</th>
+<th align="left">是否有并发请求</th>
+<th align="left">潜在问题</th>
+<th align="left">现象</th>
+<th align="left">应对方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">先删除缓存值，再更新数据库</td>
+<td align="left">无</td>
+<td align="left">缓存删除成功，但数据库更新失败</td>
+<td align="left">请求从数据库读到旧数据</td>
+<td align="left">重试数据库更新</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">有</td>
+<td align="left">缓存删除后，尚未更新数据库，有并发读请求</td>
+<td align="left">并发请求从数据库读到旧值，并且更新到缓存，导致后续请求都读取旧值</td>
+<td align="left">延迟双删；加锁</td>
+</tr>
+<tr>
+<td align="left">先更新数据库，再删除缓存</td>
+<td align="left">无</td>
+<td align="left">数据库更新成功，但缓存删除失败</td>
+<td align="left">请求从缓存读到旧数据</td>
+<td align="left">重试缓存删除</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">有</td>
+<td align="left">数据库更新成功后，尚未删除缓存，有并发读请求</td>
+<td align="left">并发请求从缓存中读到旧值</td>
+<td align="left">延迟消息；订阅变更日志；加锁</td>
+</tr>
+</tbody></table>
+<p><strong>较为通用的一致性策略拟定：</strong> </p>
+<p>在并发场景下，使用 “更新数据库 + 更新缓存” 需要用分布式锁保证缓存和数据一致性，且可能存在”缓存资源浪费“和”机器性能浪费“的情况；一般推荐使用 “更新数据库 + 删除缓存” 的方案。如果根据需要，热点数据较多，可以使用 “更新数据库 + 更新缓存” 策略。</p>
+<p>在 “更新数据库 + 删除缓存” 的方案中，推荐使用推荐用 “先更新数据库，再删除缓存” 策略，因为先删除缓存可能会导致大量请求落到数据库，而且延迟双删的时间很难评估。 在 “先更新数据库，再删除缓存” 策略中，可以使用“消息队列+重试机制” 的方案保证缓存的删除。 并通过 “订阅binlog” 进行缓存比对，加上一层保障。</p>
+<p>此外，需要通过初始化缓存预热、多数据源触发、延迟消息比对等策略进行辅助和补偿。 【多种数据更新触发源：定时任务扫描，业务系统 MQ、binlog 变更 MQ，相互之间作为互补来保证数据不会漏更新】</p>
+<h3 id="3-数据一致性中需要注意的其他问题有哪些？"><a href="#3-数据一致性中需要注意的其他问题有哪些？" class="headerlink" title="3. 数据一致性中需要注意的其他问题有哪些？"></a><strong>3. 数据一致性中需要注意的其他问题有哪些？</strong></h3><h4 id="3-1-k-v大小的合理设置"><a href="#3-1-k-v大小的合理设置" class="headerlink" title="3.1 k-v大小的合理设置"></a><strong>3.1 k-v大小的合理设置</strong></h4><blockquote>
+<p><strong>Redis key大小设计：</strong> 由于网络的一次传输MTU最大为1500字节，所以为了保证高效的性能，建议单个k-v大小不超过1KB，一次网络传输就能完成，避免多次网络交互；k-v是越小性能越好 <strong>Redis 热key：</strong>（1） 当业务遇到单个读热key，通过增加副本来提高读能力或是用hashtag把key存多份在多个分片中；（2）当业务遇到单个写热key，需业务拆分这个key的功能，属于设计不合理- 当业务遇到热分片，即多个热key在同一个分片上导致单分片cpu高，可通过hashtag方式打散</p>
+</blockquote>
+<h4 id="3-2-避免其他问题导致缓存服务器崩溃，进而简直导致数据一致性策略失效"><a href="#3-2-避免其他问题导致缓存服务器崩溃，进而简直导致数据一致性策略失效" class="headerlink" title="3.2 避免其他问题导致缓存服务器崩溃，进而简直导致数据一致性策略失效"></a><strong>3.2 避免其他问题导致缓存</strong><a href="https://cloud.tencent.com/product/cvm?from=10680"><strong>服务器</strong></a><strong>崩溃，进而简直导致数据一致性策略失效</strong></h4><p>如缓存穿透、缓存击穿、缓存雪崩、机器故障等问题</p>
+<table>
+<thead>
+<tr>
+<th align="left">问题</th>
+<th align="left">描述</th>
+<th align="left">解决方案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">缓存穿透</td>
+<td align="left">查询一个不存在的数据，不能命中缓存，导致每次请求都要到DB去查询，可能导致数据库崩溃</td>
+<td align="left">1.查询返回的数据为空，仍把这个空结果进行缓存，但过期时间会比较短； 2.布隆过滤器：将所有可能存在的数据哈希到一个足够大的bitmap中，一个一定不存在的数据会被这个bitmap拦截掉，从而避免了对DB的查询</td>
+</tr>
+<tr>
+<td align="left">缓存击穿</td>
+<td align="left">对于设置了过期时间的key，缓存在某个时间点过期的时候，恰好有大量对这个key的并发请求，可能导致大量并发的请求瞬间把数据库压垮</td>
+<td align="left">1.使用互斥锁：当缓存失效时，先使用如Redis的setnx去设置一个互斥锁，当操作成功返回时再进行数据库操作并回设缓存，否则重试get缓存的方法； 2.永远不过期：物理不过期，但逻辑过期（后台异步线程去刷新）</td>
+</tr>
+<tr>
+<td align="left">缓存雪崩</td>
+<td align="left">设置缓存时采用了相同的过期时间，缓存在某一时刻同时失效，导致大量请求访问数据库。 与缓存击穿的区别：雪崩是多key，击穿是单key缓存</td>
+<td align="left">1.分散缓存失效时间：在原有的失效时间基础上增加一个随机值； 2. 使用互斥锁，当缓存数据失效时，保证只有一个请求能够访问到数据库，并更新缓存，其他线程等待并重试</td>
+</tr>
+</tbody></table>
+<h4 id="3-3-方案选定的思路"><a href="#3-3-方案选定的思路" class="headerlink" title="3.3 方案选定的思路"></a><strong>3.3 方案选定的思路</strong></h4><ol>
+<li>确定缓存类型（读写&#x2F;只读）</li>
+<li>确定一致性级别</li>
+<li>确定同步&#x2F;异步方式</li>
+<li>选定缓存流程</li>
+<li>补充细节</li>
+</ol>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+        <tag>redis</tag>
       </tags>
   </entry>
 </search>
