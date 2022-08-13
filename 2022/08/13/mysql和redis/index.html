@@ -20,12 +20,12 @@
     var CONFIG = {"hostname":"litianxing201930640094.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="Mysql面试题1. 索引使用有哪些注意事项呢？ 隐式类型转换，会导致索引失效，例如age字段类型是int，我们where age &#x3D; “1”，这样就会触发隐式类型转换。 like通配符会导致索引失效。注意：”ABC%“会走range索引，”%ABC”索引才会失效。 联合索引，查询时的条件列不是联合索引中的第一个列，索引失效。 对索引字段进行函数运算或算术运算（如，+、-、*、&amp;#x2F">
+  <meta name="description" content="索引使用有哪些注意事项  动态sql  数据库索引的原理  聚集索引">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql和redis">
 <meta property="og:url" content="https://litianxing201930640094.github.io/2022/08/13/mysql%E5%92%8Credis/index.html">
 <meta property="og:site_name" content="最懂你的博客">
-<meta property="og:description" content="Mysql面试题1. 索引使用有哪些注意事项呢？ 隐式类型转换，会导致索引失效，例如age字段类型是int，我们where age &#x3D; “1”，这样就会触发隐式类型转换。 like通配符会导致索引失效。注意：”ABC%“会走range索引，”%ABC”索引才会失效。 联合索引，查询时的条件列不是联合索引中的第一个列，索引失效。 对索引字段进行函数运算或算术运算（如，+、-、*、&amp;#x2F">
+<meta property="og:description" content="索引使用有哪些注意事项  动态sql  数据库索引的原理  聚集索引">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://litianxing201930640094.github.io/2022/08/13/mysql%E5%92%8Credis/v2-12f36a0aa2ea88020809173182e54e73_720w.jpg">
 <meta property="og:image" content="https://litianxing201930640094.github.io/2022/08/13/mysql%E5%92%8Credis/image-20220318200549443.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://litianxing201930640094.github.io/2022/08/13/mysql%E5%92%8Credis/1620-16603835178825.png">
 <meta property="og:image" content="https://litianxing201930640094.github.io/2022/08/13/mysql%E5%92%8Credis/1620-16603835178826.png">
 <meta property="article:published_time" content="2022-08-13T09:38:16.000Z">
-<meta property="article:modified_time" content="2022-08-13T09:47:24.476Z">
+<meta property="article:modified_time" content="2022-08-13T12:15:45.323Z">
 <meta property="article:author" content="Tianxing">
 <meta property="article:tag" content="mysql">
 <meta property="article:tag" content="redis">
@@ -57,7 +57,20 @@
     lang   : 'zh-CN'
   };
 </script>
-
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-postbottom {
+  cursor: pointer;
+  height: 26px;
+  margin-top: 10px;
+  position: relative;
+}
+#needsharebutton-postbottom .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 3px;
+  display: initial;
+  padding: 1px 4px;
+}
+</style>
   <title>mysql和redis | 最懂你的博客</title>
   
 
@@ -233,7 +246,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-08-13 17:38:16 / 修改时间：17:47:24" itemprop="dateCreated datePublished" datetime="2022-08-13T17:38:16+08:00">2022-08-13</time>
+              <time title="创建时间：2022-08-13 17:38:16 / 修改时间：20:15:45" itemprop="dateCreated datePublished" datetime="2022-08-13T17:38:16+08:00">2022-08-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -260,6 +273,7 @@
   </span>
   
   
+            <div class="post-description">索引使用有哪些注意事项  动态sql  数据库索引的原理  聚集索引</div>
 
         </div>
       </header>
@@ -888,7 +902,13 @@
 
     
     
-    
+    <div class="post-widgets">
+      <div id="needsharebutton-postbottom">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    </div>
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -905,7 +925,10 @@
     <a href="/2022/08/13/java%E5%9F%BA%E7%A1%80/" rel="prev" title="java基础">
       <i class="fa fa-chevron-left"></i> java基础
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/13/next-v7.8%E5%BC%80%E5%8F%91%E5%8D%9A%E5%AE%A2%E6%89%8B%E5%86%8C/" rel="next" title="next-v7.8开发博客手册">
+      next-v7.8开发博客手册 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -987,20 +1010,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1101,6 +1124,15 @@
 
   
 
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      pbOptions = {};
+        pbOptions.iconStyle = "box";
+        pbOptions.boxForm = "horizontal";
+        pbOptions.position = "bottomCenter";
+        pbOptions.networks = "Wechat,QQZone,Weibo,Douban,Twitter,Facebook";
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+  </script>
 <script>
   function loadCount() {
     var d = document, s = d.createElement('script');
