@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Hello World</title>
+    <url>/2022/08/10/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<span id="more"></span>
+
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Linux学习笔记</title>
     <url>/2022/08/13/Linux%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h1 id="LInux学习笔记："><a href="#LInux学习笔记：" class="headerlink" title="LInux学习笔记："></a>LInux学习笔记：</h1><h2 id="文件目录系统："><a href="#文件目录系统：" class="headerlink" title="文件目录系统："></a>文件目录系统：</h2><h3 id="Linux下一切皆文件"><a href="#Linux下一切皆文件" class="headerlink" title="Linux下一切皆文件"></a>Linux下一切皆文件</h3><p><strong>~ 为当前用户目录</strong>   root 用户为&#x2F;root   一般用户为  &#x2F;home&#x2F;usr  </p>
@@ -73,26 +93,6 @@
       <categories>
         <category>Linux</category>
       </categories>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2022/08/10/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<span id="more"></span>
-
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
   </entry>
   <entry>
     <title>java基础</title>
@@ -241,181 +241,6 @@
         <tag>java</tag>
         <tag>JUC</tag>
         <tag>jvm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>next-v7.8开发博客手册</title>
-    <url>/2022/08/13/next-v7.8%E5%BC%80%E5%8F%91%E5%8D%9A%E5%AE%A2%E6%89%8B%E5%86%8C/</url>
-    <content><![CDATA[<h1 id="next-v7-8博客开发手册"><a href="#next-v7-8博客开发手册" class="headerlink" title="next-v7.8博客开发手册"></a><strong>next-v7.8博客开发手册</strong></h1><h2 id="Hexo-Next主题首页配置为只显示部分摘要"><a href="#Hexo-Next主题首页配置为只显示部分摘要" class="headerlink" title="Hexo Next主题首页配置为只显示部分摘要"></a>Hexo Next主题首页配置为只显示部分摘要</h2><span id="more"></span>
-
-<p>使用Next主题时，首页会默认显示全文，这样就会很不方便，所以需要设置让首页只显示一部分摘要，而不是全文。</p>
-<h3 id="方法一：写概述"><a href="#方法一：写概述" class="headerlink" title="方法一：写概述"></a>方法一：写概述</h3><p>在文章头部配置description，即为摘要</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo添加分类及标签（在Next主题下）</span><br><span class="line">categories:  Hexo</span><br><span class="line">description: 此处为摘要</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>这一种方法是需要自己写概述，所以比较费事，于是就有了第二种方法。</p>
-<h3 id="方法二：文章截断显示"><a href="#方法二：文章截断显示" class="headerlink" title="方法二：文章截断显示"></a>方法二：文章截断显示</h3><p>这种方法只需要在对应的文章里，想要展示的文章后添加以下标签就可以了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
-
-<p>然后首页就会显示在这个标签以上的所有内容，隐藏文章下面的所有内容。</p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-        <category>next</category>
-      </categories>
-      <tags>
-        <tag>next</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计网与操作系统</title>
-    <url>/2022/08/10/%E8%AE%A1%E7%BD%91%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h1 id="计网"><a href="#计网" class="headerlink" title="计网"></a>计网</h1><h3 id="1-https原理"><a href="#1-https原理" class="headerlink" title="1. https原理"></a>1. https原理</h3><p>客户端向服务端请求证书，服务端将ca机构颁发的<strong>内含认证机构信息，服务端公钥和认证机构签名</strong>的证书发送给客户端，所有的电脑和手机上都预先安装了<strong>根证书，</strong>内含可信认证机构的信息和公钥，用公钥对签名进行验证，确保证书没有被伪造，获得服务端公钥后，客户端将对称密钥用服务端公钥加密发送给服务端，双方都获取到对称密钥后就可以进行数据交流了。</p>
-<span id="more"></span>
-
-<p><strong>非对称加密：</strong></p>
-<p>RSA签名算法，单向陷门函数，文件的校验过程：一方发送： <strong>文件+签名</strong>      用公钥对签名进行解密，得到文件哈希值，用同样的哈希算法对文件进行hash运算得到哈希值，两个哈希值进行对比。</p>
-<h4 id><a href="#" class="headerlink" title></a><img src="/2022/08/10/%E8%AE%A1%E7%BD%91%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20220316162551810.png" alt="image-20220316162551810"></h4><h3 id="2-cookie，session，token"><a href="#2-cookie，session，token" class="headerlink" title="2. cookie，session，token"></a>2. cookie，session，token</h3><p><a href="https://blog.csdn.net/chen13333336677/article/details/100939030">(36条消息) Cookie和Session的区别（面试必备）_秋风不识路的博客-CSDN博客_session和cookie的区别面试题</a></p>
-<p><a href="https://www.jianshu.com/p/7c34b78f1675">Token无状态登录验证 - 简书 (jianshu.com)</a>  </p>
-<p><strong>token相比cookie,session：</strong> token储存的是加密后的用户的信息，服务端解密即可获得用户信息。</p>
-<p>cookie是sessionID，通过sessionID到db查询用户信息。未使用加密算法。</p>
-<p><strong>AES</strong>对称加密生成token</p>
-<p><strong>jwt</strong>生成的json字符串长度太长，占用内存。</p>
-<h3 id="3-TCP-x2F-IP四层协议与OSI模型的对应关系"><a href="#3-TCP-x2F-IP四层协议与OSI模型的对应关系" class="headerlink" title="3. TCP&#x2F;IP四层协议与OSI模型的对应关系"></a>3. TCP&#x2F;IP四层协议与OSI模型的对应关系</h3><h3 id="4-GET-和-POST-的区别？"><a href="#4-GET-和-POST-的区别？" class="headerlink" title="4. GET 和 POST 的区别？"></a>4. GET 和 POST 的区别？</h3><ul>
-<li><p><code>GET</code>用来获取资源，它只是获取、查询数据，不会修改服务器的数据，从这点来讲，它是安全的（后面还会从另一方面分析它的不安全性）。由于它是读取的，因此可以对<code>GET</code>请求的数据进行缓存。</p>
-</li>
-<li><p><code>POST</code>则是可以向服务器发送修改请求，进行数据的修改的。举个例子：比如说我们要在知乎、或者论坛下面评论，这个时候就需要用到<code>POST</code>请求。但是它不能缓存，为什么呢？设想如果我们将“评论成功”的页面缓存在本地，那么当我发送一个请求的时候，直接返回本地的“评论成功”页面，而服务器端则什么也没有做，根本没有进行评论的更新，岂不是难以想象。</p>
-<table>
-<thead>
-<tr>
-<th align="left"></th>
-<th align="left">GET</th>
-<th>POST</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">后退按钮&#x2F;刷新</td>
-<td align="left">无害</td>
-<td>数据会被重新提交（浏览器应该告知用户数据会被重新提交）。</td>
-</tr>
-<tr>
-<td align="left">书签</td>
-<td align="left">可收藏为书签</td>
-<td>不可收藏为书签</td>
-</tr>
-<tr>
-<td align="left">缓存</td>
-<td align="left">能被缓存</td>
-<td>不能缓存</td>
-</tr>
-<tr>
-<td align="left">编码类型</td>
-<td align="left">application&#x2F;x-www-form-urlencoded</td>
-<td>application&#x2F;x-www-form-urlencoded 或 multipart&#x2F;form-data。为二进制数据使用多重编码。</td>
-</tr>
-<tr>
-<td align="left">历史</td>
-<td align="left">参数保留在浏览器历史中。</td>
-<td>参数不会保存在浏览器历史中。</td>
-</tr>
-<tr>
-<td align="left">对数据长度的限制</td>
-<td align="left">是的。当发送数据时，GET 方法向 URL 添加数据；URL 的长度是受限制的（URL 的最大长度是 2048 个字符）。</td>
-<td>无限制。</td>
-</tr>
-<tr>
-<td align="left">对数据类型的限制</td>
-<td align="left">只允许 ASCII 字符。</td>
-<td>没有限制。也允许二进制数据。</td>
-</tr>
-<tr>
-<td align="left">安全性</td>
-<td align="left">与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！</td>
-<td>POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。</td>
-</tr>
-<tr>
-<td align="left">可见性</td>
-<td align="left">数据在 URL 中对所有人都是可见的。</td>
-<td>数据不会显示在 URL 中。</td>
-</tr>
-</tbody></table>
-</li>
-</ul>
-<h3 id="5-拥塞se控制"><a href="#5-拥塞se控制" class="headerlink" title="5.拥塞se控制"></a>5.拥塞se控制</h3><p>​	慢开始：拥塞窗口从1开始，每过一个RTT就翻倍</p>
-<p>​	拥塞避免： 每经过一个往返时间 RTT 就把发送放的 cwnd 加 1.</p>
-<p>​	快重传： 解决了网络拥塞的误判问题。</p>
-<p>​	如果接收机接收到一个不按顺序的数据段，它会立即给发送机发送一个重复确认。如果发送机接收到三个重复确认，它会假定确认件指	出的数据段丢失了，并立即重传这些丢失的数据段。</p>
-<p><img src="/2022/08/10/%E8%AE%A1%E7%BD%91%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20220716215512554.png" alt="image-20220716215512554"></p>
-<p>​	快恢复： 窗口大小下调为拥塞避免阈值的一半，没经过一个传输轮次递增1；</p>
-<h3 id="-1"><a href="#-1" class="headerlink" title></a></h3><h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><p>运行的用户程序中，凡是与系统态级别的资源有关的操作（如文件管理、进程控制、内存管理等)，都必须通过系统调用方式向操作系统提出服务请求，并由操作系统代为完成。</p>
-<h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><ul>
-<li>设备管理。完成设备的请求或释放，以及设备启动等功能。</li>
-<li>文件管理。完成文件的读、写、创建及删除等功能。</li>
-<li>进程控制。完成进程的创建、撤销、阻塞及唤醒等功能。</li>
-<li>进程通信。完成进程之间的消息传递或信号传递等功能。</li>
-<li>内存管理。完成内存的分配、回收以及获取作业占用内存区大小及地址等功能。</li>
-</ul>
-<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a><a href="https://blog.csdn.net/ThinkWon/article/details/102021274">进程和线程的区别</a></h2><p>线程具有许多传统进程所具有的特征，故又称为轻型进程(Light—Weight Process)或进程元；而把传统的进程称为重型进程(Heavy—Weight Process)，它相当于只有一个线程的任务。在引入了线程的操作系统中，通常一个进程都有若干个线程，至少包含一个线程。</p>
-<p><strong>根本区别</strong>：进程是操作系统资源分配的基本单位，而线程是处理器任务调度和执行的基本单位</p>
-<p><strong>包含关系</strong>：如果一个进程内有多个线程，则执行过程不是一条线的，而是多条线（线程）共同完成的；线程是进程的一部分，所以线程也被称为轻权进程或者轻量级进程。</p>
-<p><strong>资源开销</strong>：每个进程都有独立的代码和数据空间（程序上下文），程序之间的切换会有较大的开销；线程可以看做轻量级的进程，同一类线程共享代码和数据空间，每个线程都有自己独立的运行栈和程序计数器（PC），线程之间切换的开销小；</p>
-<p><strong>内存分配</strong>：同一进程的线程共享本进程的地址空间和资源，而进程之间的地址空间和资源是相互独立的</p>
-<p><strong>影响关系：</strong>一个进程崩溃后，在保护模式下不会对其他进程产生影响，但是一个线程崩溃整个进程都死掉。所以多进程要比多线程健壮。</p>
-<p><strong>执行过程：</strong>每个独立的进程有程序运行的入口、顺序执行序列和程序出口。但是线程不能独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制，两者均可并发执行<br><strong>之后再从jvm内存结构层面说下</strong></p>
-<h2 id="进程间通信IPC-InterProcess-Communication"><a href="#进程间通信IPC-InterProcess-Communication" class="headerlink" title="进程间通信IPC (InterProcess Communication)"></a><a href="https://www.jianshu.com/p/c1015f5ffa74">进程间通信IPC (InterProcess Communication)</a></h2><h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>无名管道   –&gt; 局限性 –&gt; 有名管道</p>
-<p><strong>无名管道</strong> ：实质上是内核中的缓存区，半双工通信，只能用于有情缘关系的进程间通信，严格按先进先出的顺序读写数据，一个进程将写入的内容添加到管道尾部，另一个进程从管道头部读出数据；</p>
-<p><strong>限制：</strong>单向通信，只能用于亲远关系的进程间通信，缓冲区提前在内存分配，大小有限，</p>
-<p>管道的缓冲区是有限的（管道制存在于内存中，在管道创建时，为缓冲区分配一个页面大小）；</p>
-<p>管道所传送的是无格式字节流，这就要求管道的读出方和写入方必须事先约定好数据的格式，比如多少字节算                作一个消息（或命令、或记录）等等；</p>
-<p><strong>有名管道</strong>：有名管道不同于匿名管道之处在于它提供了一个路径名与之关联，<strong>以有名管道的文件形式存在于文件系统中</strong>，这样，<strong>即使与有名管道的创建进程不存在亲缘关系的进程，只要可以访问该路径，就能够彼此通过有名管道相互通信</strong>，因此，通过有名管道不相关的进程也能交换数据。<strong>有名管道的名字存在于文件系统中，内容存放在内存中。</strong></p>
-<p><strong>阻塞问题：</strong>必须知道对方进程的状态；在打开时需要确实对方的存在，否则将阻塞。即以读方式打开某管道，在此之前必须一个进程以写方式打开管道，否则阻塞。</p>
-<h3 id="信号"><a href="#信号" class="headerlink" title="信号"></a><strong>信号</strong></h3><p>信号可以在任何时候发给某一进程，而无需知道该进程的状态。</p>
-<p>信号由进程产生，设置接收进程pid，传递给操作系统，之后</p>
-<ul>
-<li>如果该进程当前并未处于执行状态，则该信号就有内核保存起来，知道该进程恢复执行并传递给它为止。</li>
-<li>如果一个信号被进程设置为阻塞，则该信号的传递被延迟，直到其阻塞被取消是才被传递给进程。</li>
-</ul>
-<p>目的进程接收到此信号，终止当前代码的执行，保护上下文，<strong>中断处理信号</strong>，执行完成后再回复到中断的位置。</p>
-<h3 id="消息-Message-队列"><a href="#消息-Message-队列" class="headerlink" title="消息(Message)队列"></a><strong>消息(Message)队列</strong></h3><p><strong>内核</strong>中的消息链表，由消息队列标识符标识，只有在内核重启(即，操作系统重启)或者显示地删除一个消息队列时，该消息队列才会被真正的删除。<br> （1）消息队列允许一个或多个进程向它写入与读取消息.<br> （2）消息队列可以实现消息的随机查询,消息不一定要以先进先出的次序读取,也可以按消息的类型读取.比FIFO更有优势<br> （3）消息队列克服了信号承载信息量少，管道只能承载无格式字 节流以及缓冲区大小受限等缺。</p>
-<h3 id="共享内存-share-memory"><a href="#共享内存-share-memory" class="headerlink" title="共享内存(share memory)"></a><strong>共享内存(share memory)</strong></h3><p>多个进程可以可以直接读写同一块内存空间，是最快的可用IPC形式。是针对其他通信机制运行效率较低而设计的。需要访问共享内存的进程将其映射到自己的私有地址空间。进程就可以直接读写这一块内存而不需要进行数据的拷贝，从而大大提高效率。</p>
-<p>多个进程共享一段内存，因此需要依靠某种同步机制（如信号量）来达到进程间的同步及互斥。</p>
-<h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>信号量是一个计数器，用于多进程对共享数据的访问，信号量的意图在于进程间同步。</p>
-<p>p 减 V加</p>
-<h3 id="套接字-socket"><a href="#套接字-socket" class="headerlink" title="套接字(socket)"></a><strong>套接字(socket)</strong></h3><p>套接字是一种通信机制，凭借这种机制，<strong>客户&#x2F;服务器</strong>（即要进行通信的进程）系统的开发工作既可以在本地单机上进行，也可以跨网络进行。基于TCP&#x2F;IP的网络通信，简单的说就是通信的两方的一种约定，用套接字中的相关函数来完成通信过程。</p>
-<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p><strong>产生条件：</strong> 资源互斥、占有并等待、不可抢占、循环等待；</p>
-<p><strong>预防策略：</strong>1. 破坏占有并等待：静态分配策略，必须能申请到全部资源进程才执行，要么全占有，要么都不占有，但这种策略 <strong>严重地降低了资源利用率</strong>，因为在每个进程所占有的资源中，有些资源是在比较靠后的执行时间里采用的，造成其他进程因为申请不到这些资源而处于等待状态；</p>
-<ol start="2">
-<li>破坏循环等待：给资源编号，进程按递增顺序申请和按递减顺序释放资源。</li>
-</ol>
-<p><strong>避免死锁</strong>： 银行家算法：当一个进程申请使用资源的时候，银行家算法通过先 <strong>试探</strong> 分配给该进程资源，然后通过安全性算法判断分配后的系统是否处于安全状态，若不安全则试探分配作废，让该进程继续等待。</p>
-<p><strong>检测与解除</strong>：<strong>进程资源分配图</strong>  撤销涉及死锁的进程（全部或逐个），抢占资源，进行资源的重新分配；</p>
-<h2 id="内存管理机制"><a href="#内存管理机制" class="headerlink" title="内存管理机制"></a>内存管理机制</h2><p><strong>块式管理</strong>  – 块是固定大小，产生大量内存碎片–&gt;  <strong>页式</strong> <strong>管理</strong> –划分为比较小一页一页的，有效减少了内存碎片，但是没有实际意义–&gt; <strong>段式管理</strong>（划分为具有实际意义的段，更好满足用户需求）</p>
-<p>段页式内存管理：结合了段式管理和页式管理的优点</p>
-<p><strong>快表</strong>：解决了虚拟地址到物理地址的转换要快的问题；<strong>以空间换时间</strong></p>
-<p><strong>多级页表</strong>：解决虚拟地址空间大，页表也会很大的问题。内存中只放一级页表，需要哪个二级页表就从磁盘调入。      			   	<strong>以时间换空间</strong></p>
-<h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a><strong>虚拟内存</strong></h2><p><a href="https://juejin.cn/post/6844903507594575886">虚拟内存的那点事儿 - 掘金 (juejin.cn)</a></p>
-<p>是计算机系统内存管理的一种技术，<strong>虚拟内存的重要意义是它定义了一个连续的虚拟地址空间</strong>，并且 <strong>把内存扩展到硬盘空间</strong>。</p>
-<ul>
-<li>它把主存看作为一个存储在硬盘上的虚拟地址空间的高速缓存，并且只在主存中缓存活动区域（按需缓存）。</li>
-<li>它为每个进程提供了一个一致的地址空间，从而降低了程序员对内存管理的复杂性。</li>
-<li>它还保护了每个进程的地址空间不会被其他进程破坏。</li>
-</ul>
-<h3 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a><strong>局部性原理</strong></h3><ol>
-<li><strong>时间局部性</strong> ：如果程序中的某条指令一旦执行，不久以后该指令可能再次执行；如果某数据被访问过，不久以后该数据可能再次被访问。产生时间局部性的典型原因，是由于在程序中存在着大量的循环操作。</li>
-<li><strong>空间局部性</strong> ：一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也将被访问，即程序在一段时间内所访问的地址，可能集中在一定的范围之内，这是因为指令通常是顺序存放、顺序执行的，数据也一般是以向量、数组、表等形式簇聚存储的。</li>
-</ol>
-<h2 id="虚拟内存技术的实现"><a href="#虚拟内存技术的实现" class="headerlink" title="虚拟内存技术的实现"></a><strong>虚拟内存技术的实现</strong></h2><h3 id="请求分页存储管理"><a href="#请求分页存储管理" class="headerlink" title="请求分页存储管理"></a><strong>请求分页存储管理</strong></h3><p><strong>缺页中断</strong>：如果<strong>需执行的指令或访问的数据尚未在内存</strong>（称为缺页或缺段），则由处理器通知操作系统将相应的页面或段<strong>调入到内存</strong>，（分配的内存空间不够则触发页面置换算法）然后继续执行程序；</p>
-<h3 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h3><ul>
-<li><strong>OPT 页面置换算法（最佳页面置换算法）</strong> ：最佳（Optimal， OPT）置换算法所选择的被淘汰页面将是以后永不使用的，或者是在最长时间内不再被访问的页面，这样可以保证获得最低的缺页率。但由于人们目前无法预知进程在内存下的若千页面中哪个是未来最长时间内不再被访问的，因而该算法无法实现。一般作为衡量其他置换算法的方法。</li>
-<li><strong>FIFO（First In First Out） 页面置换算法（先进先出页面置换算法）</strong> ： 总是淘汰最先进入内存的页面，即选择在内存中驻留时间最久的页面进行淘汰。</li>
-<li><strong>LRU （Least最近使用）页面置换算法（最近最久未使用页面置换算法）</strong> ：LRU 算法赋予每个页面一个访问字段，用来记录一个页面自上次被访问以来所经历的时间 T，当须淘汰一个页面时，选择现有页面中其 T 值最大的，即最近最久未使用的页面予以淘汰。</li>
-<li><strong>LFU （Minimum Often Used）页面置换算法（最少使用页面置换算法）</strong> ： 该置换算法选择在之前时期使用最少的页面作为淘汰页。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机基础</category>
-      </categories>
-      <tags>
-        <tag>基础</tag>
       </tags>
   </entry>
   <entry>
@@ -1041,6 +866,181 @@
       <tags>
         <tag>mysql</tag>
         <tag>redis</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>next-v7.8开发博客手册</title>
+    <url>/2022/08/13/next-v7.8%E5%BC%80%E5%8F%91%E5%8D%9A%E5%AE%A2%E6%89%8B%E5%86%8C/</url>
+    <content><![CDATA[<h1 id="next-v7-8博客开发手册"><a href="#next-v7-8博客开发手册" class="headerlink" title="next-v7.8博客开发手册"></a><strong>next-v7.8博客开发手册</strong></h1><h2 id="Hexo-Next主题首页配置为只显示部分摘要"><a href="#Hexo-Next主题首页配置为只显示部分摘要" class="headerlink" title="Hexo Next主题首页配置为只显示部分摘要"></a>Hexo Next主题首页配置为只显示部分摘要</h2><span id="more"></span>
+
+<p>使用Next主题时，首页会默认显示全文，这样就会很不方便，所以需要设置让首页只显示一部分摘要，而不是全文。</p>
+<h3 id="方法一：写概述"><a href="#方法一：写概述" class="headerlink" title="方法一：写概述"></a>方法一：写概述</h3><p>在文章头部配置description，即为摘要</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo添加分类及标签（在Next主题下）</span><br><span class="line">categories:  Hexo</span><br><span class="line">description: 此处为摘要</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>这一种方法是需要自己写概述，所以比较费事，于是就有了第二种方法。</p>
+<h3 id="方法二：文章截断显示"><a href="#方法二：文章截断显示" class="headerlink" title="方法二：文章截断显示"></a>方法二：文章截断显示</h3><p>这种方法只需要在对应的文章里，想要展示的文章后添加以下标签就可以了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>然后首页就会显示在这个标签以上的所有内容，隐藏文章下面的所有内容。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+        <category>next</category>
+      </categories>
+      <tags>
+        <tag>next</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计网与操作系统</title>
+    <url>/2022/08/10/%E8%AE%A1%E7%BD%91%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h1 id="计网"><a href="#计网" class="headerlink" title="计网"></a>计网</h1><h3 id="1-https原理"><a href="#1-https原理" class="headerlink" title="1. https原理"></a>1. https原理</h3><p>客户端向服务端请求证书，服务端将ca机构颁发的<strong>内含认证机构信息，服务端公钥和认证机构签名</strong>的证书发送给客户端，所有的电脑和手机上都预先安装了<strong>根证书，</strong>内含可信认证机构的信息和公钥，用公钥对签名进行验证，确保证书没有被伪造，获得服务端公钥后，客户端将对称密钥用服务端公钥加密发送给服务端，双方都获取到对称密钥后就可以进行数据交流了。</p>
+<span id="more"></span>
+
+<p><strong>非对称加密：</strong></p>
+<p>RSA签名算法，单向陷门函数，文件的校验过程：一方发送： <strong>文件+签名</strong>      用公钥对签名进行解密，得到文件哈希值，用同样的哈希算法对文件进行hash运算得到哈希值，两个哈希值进行对比。</p>
+<h4 id><a href="#" class="headerlink" title></a><img src="/2022/08/10/%E8%AE%A1%E7%BD%91%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20220316162551810.png" alt="image-20220316162551810"></h4><h3 id="2-cookie，session，token"><a href="#2-cookie，session，token" class="headerlink" title="2. cookie，session，token"></a>2. cookie，session，token</h3><p><a href="https://blog.csdn.net/chen13333336677/article/details/100939030">(36条消息) Cookie和Session的区别（面试必备）_秋风不识路的博客-CSDN博客_session和cookie的区别面试题</a></p>
+<p><a href="https://www.jianshu.com/p/7c34b78f1675">Token无状态登录验证 - 简书 (jianshu.com)</a>  </p>
+<p><strong>token相比cookie,session：</strong> token储存的是加密后的用户的信息，服务端解密即可获得用户信息。</p>
+<p>cookie是sessionID，通过sessionID到db查询用户信息。未使用加密算法。</p>
+<p><strong>AES</strong>对称加密生成token</p>
+<p><strong>jwt</strong>生成的json字符串长度太长，占用内存。</p>
+<h3 id="3-TCP-x2F-IP四层协议与OSI模型的对应关系"><a href="#3-TCP-x2F-IP四层协议与OSI模型的对应关系" class="headerlink" title="3. TCP&#x2F;IP四层协议与OSI模型的对应关系"></a>3. TCP&#x2F;IP四层协议与OSI模型的对应关系</h3><h3 id="4-GET-和-POST-的区别？"><a href="#4-GET-和-POST-的区别？" class="headerlink" title="4. GET 和 POST 的区别？"></a>4. GET 和 POST 的区别？</h3><ul>
+<li><p><code>GET</code>用来获取资源，它只是获取、查询数据，不会修改服务器的数据，从这点来讲，它是安全的（后面还会从另一方面分析它的不安全性）。由于它是读取的，因此可以对<code>GET</code>请求的数据进行缓存。</p>
+</li>
+<li><p><code>POST</code>则是可以向服务器发送修改请求，进行数据的修改的。举个例子：比如说我们要在知乎、或者论坛下面评论，这个时候就需要用到<code>POST</code>请求。但是它不能缓存，为什么呢？设想如果我们将“评论成功”的页面缓存在本地，那么当我发送一个请求的时候，直接返回本地的“评论成功”页面，而服务器端则什么也没有做，根本没有进行评论的更新，岂不是难以想象。</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">GET</th>
+<th>POST</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">后退按钮&#x2F;刷新</td>
+<td align="left">无害</td>
+<td>数据会被重新提交（浏览器应该告知用户数据会被重新提交）。</td>
+</tr>
+<tr>
+<td align="left">书签</td>
+<td align="left">可收藏为书签</td>
+<td>不可收藏为书签</td>
+</tr>
+<tr>
+<td align="left">缓存</td>
+<td align="left">能被缓存</td>
+<td>不能缓存</td>
+</tr>
+<tr>
+<td align="left">编码类型</td>
+<td align="left">application&#x2F;x-www-form-urlencoded</td>
+<td>application&#x2F;x-www-form-urlencoded 或 multipart&#x2F;form-data。为二进制数据使用多重编码。</td>
+</tr>
+<tr>
+<td align="left">历史</td>
+<td align="left">参数保留在浏览器历史中。</td>
+<td>参数不会保存在浏览器历史中。</td>
+</tr>
+<tr>
+<td align="left">对数据长度的限制</td>
+<td align="left">是的。当发送数据时，GET 方法向 URL 添加数据；URL 的长度是受限制的（URL 的最大长度是 2048 个字符）。</td>
+<td>无限制。</td>
+</tr>
+<tr>
+<td align="left">对数据类型的限制</td>
+<td align="left">只允许 ASCII 字符。</td>
+<td>没有限制。也允许二进制数据。</td>
+</tr>
+<tr>
+<td align="left">安全性</td>
+<td align="left">与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！</td>
+<td>POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。</td>
+</tr>
+<tr>
+<td align="left">可见性</td>
+<td align="left">数据在 URL 中对所有人都是可见的。</td>
+<td>数据不会显示在 URL 中。</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h3 id="5-拥塞se控制"><a href="#5-拥塞se控制" class="headerlink" title="5.拥塞se控制"></a>5.拥塞se控制</h3><p>​	慢开始：拥塞窗口从1开始，每过一个RTT就翻倍</p>
+<p>​	拥塞避免： 每经过一个往返时间 RTT 就把发送放的 cwnd 加 1.</p>
+<p>​	快重传： 解决了网络拥塞的误判问题。</p>
+<p>​	如果接收机接收到一个不按顺序的数据段，它会立即给发送机发送一个重复确认。如果发送机接收到三个重复确认，它会假定确认件指	出的数据段丢失了，并立即重传这些丢失的数据段。</p>
+<p><img src="/2022/08/10/%E8%AE%A1%E7%BD%91%E4%B8%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/image-20220716215512554.png" alt="image-20220716215512554"></p>
+<p>​	快恢复： 窗口大小下调为拥塞避免阈值的一半，没经过一个传输轮次递增1；</p>
+<h3 id="-1"><a href="#-1" class="headerlink" title></a></h3><h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><p>运行的用户程序中，凡是与系统态级别的资源有关的操作（如文件管理、进程控制、内存管理等)，都必须通过系统调用方式向操作系统提出服务请求，并由操作系统代为完成。</p>
+<h3 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h3><ul>
+<li>设备管理。完成设备的请求或释放，以及设备启动等功能。</li>
+<li>文件管理。完成文件的读、写、创建及删除等功能。</li>
+<li>进程控制。完成进程的创建、撤销、阻塞及唤醒等功能。</li>
+<li>进程通信。完成进程之间的消息传递或信号传递等功能。</li>
+<li>内存管理。完成内存的分配、回收以及获取作业占用内存区大小及地址等功能。</li>
+</ul>
+<h2 id="进程和线程的区别"><a href="#进程和线程的区别" class="headerlink" title="进程和线程的区别"></a><a href="https://blog.csdn.net/ThinkWon/article/details/102021274">进程和线程的区别</a></h2><p>线程具有许多传统进程所具有的特征，故又称为轻型进程(Light—Weight Process)或进程元；而把传统的进程称为重型进程(Heavy—Weight Process)，它相当于只有一个线程的任务。在引入了线程的操作系统中，通常一个进程都有若干个线程，至少包含一个线程。</p>
+<p><strong>根本区别</strong>：进程是操作系统资源分配的基本单位，而线程是处理器任务调度和执行的基本单位</p>
+<p><strong>包含关系</strong>：如果一个进程内有多个线程，则执行过程不是一条线的，而是多条线（线程）共同完成的；线程是进程的一部分，所以线程也被称为轻权进程或者轻量级进程。</p>
+<p><strong>资源开销</strong>：每个进程都有独立的代码和数据空间（程序上下文），程序之间的切换会有较大的开销；线程可以看做轻量级的进程，同一类线程共享代码和数据空间，每个线程都有自己独立的运行栈和程序计数器（PC），线程之间切换的开销小；</p>
+<p><strong>内存分配</strong>：同一进程的线程共享本进程的地址空间和资源，而进程之间的地址空间和资源是相互独立的</p>
+<p><strong>影响关系：</strong>一个进程崩溃后，在保护模式下不会对其他进程产生影响，但是一个线程崩溃整个进程都死掉。所以多进程要比多线程健壮。</p>
+<p><strong>执行过程：</strong>每个独立的进程有程序运行的入口、顺序执行序列和程序出口。但是线程不能独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制，两者均可并发执行<br><strong>之后再从jvm内存结构层面说下</strong></p>
+<h2 id="进程间通信IPC-InterProcess-Communication"><a href="#进程间通信IPC-InterProcess-Communication" class="headerlink" title="进程间通信IPC (InterProcess Communication)"></a><a href="https://www.jianshu.com/p/c1015f5ffa74">进程间通信IPC (InterProcess Communication)</a></h2><h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p>无名管道   –&gt; 局限性 –&gt; 有名管道</p>
+<p><strong>无名管道</strong> ：实质上是内核中的缓存区，半双工通信，只能用于有情缘关系的进程间通信，严格按先进先出的顺序读写数据，一个进程将写入的内容添加到管道尾部，另一个进程从管道头部读出数据；</p>
+<p><strong>限制：</strong>单向通信，只能用于亲远关系的进程间通信，缓冲区提前在内存分配，大小有限，</p>
+<p>管道的缓冲区是有限的（管道制存在于内存中，在管道创建时，为缓冲区分配一个页面大小）；</p>
+<p>管道所传送的是无格式字节流，这就要求管道的读出方和写入方必须事先约定好数据的格式，比如多少字节算                作一个消息（或命令、或记录）等等；</p>
+<p><strong>有名管道</strong>：有名管道不同于匿名管道之处在于它提供了一个路径名与之关联，<strong>以有名管道的文件形式存在于文件系统中</strong>，这样，<strong>即使与有名管道的创建进程不存在亲缘关系的进程，只要可以访问该路径，就能够彼此通过有名管道相互通信</strong>，因此，通过有名管道不相关的进程也能交换数据。<strong>有名管道的名字存在于文件系统中，内容存放在内存中。</strong></p>
+<p><strong>阻塞问题：</strong>必须知道对方进程的状态；在打开时需要确实对方的存在，否则将阻塞。即以读方式打开某管道，在此之前必须一个进程以写方式打开管道，否则阻塞。</p>
+<h3 id="信号"><a href="#信号" class="headerlink" title="信号"></a><strong>信号</strong></h3><p>信号可以在任何时候发给某一进程，而无需知道该进程的状态。</p>
+<p>信号由进程产生，设置接收进程pid，传递给操作系统，之后</p>
+<ul>
+<li>如果该进程当前并未处于执行状态，则该信号就有内核保存起来，知道该进程恢复执行并传递给它为止。</li>
+<li>如果一个信号被进程设置为阻塞，则该信号的传递被延迟，直到其阻塞被取消是才被传递给进程。</li>
+</ul>
+<p>目的进程接收到此信号，终止当前代码的执行，保护上下文，<strong>中断处理信号</strong>，执行完成后再回复到中断的位置。</p>
+<h3 id="消息-Message-队列"><a href="#消息-Message-队列" class="headerlink" title="消息(Message)队列"></a><strong>消息(Message)队列</strong></h3><p><strong>内核</strong>中的消息链表，由消息队列标识符标识，只有在内核重启(即，操作系统重启)或者显示地删除一个消息队列时，该消息队列才会被真正的删除。<br> （1）消息队列允许一个或多个进程向它写入与读取消息.<br> （2）消息队列可以实现消息的随机查询,消息不一定要以先进先出的次序读取,也可以按消息的类型读取.比FIFO更有优势<br> （3）消息队列克服了信号承载信息量少，管道只能承载无格式字 节流以及缓冲区大小受限等缺。</p>
+<h3 id="共享内存-share-memory"><a href="#共享内存-share-memory" class="headerlink" title="共享内存(share memory)"></a><strong>共享内存(share memory)</strong></h3><p>多个进程可以可以直接读写同一块内存空间，是最快的可用IPC形式。是针对其他通信机制运行效率较低而设计的。需要访问共享内存的进程将其映射到自己的私有地址空间。进程就可以直接读写这一块内存而不需要进行数据的拷贝，从而大大提高效率。</p>
+<p>多个进程共享一段内存，因此需要依靠某种同步机制（如信号量）来达到进程间的同步及互斥。</p>
+<h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>信号量是一个计数器，用于多进程对共享数据的访问，信号量的意图在于进程间同步。</p>
+<p>p 减 V加</p>
+<h3 id="套接字-socket"><a href="#套接字-socket" class="headerlink" title="套接字(socket)"></a><strong>套接字(socket)</strong></h3><p>套接字是一种通信机制，凭借这种机制，<strong>客户&#x2F;服务器</strong>（即要进行通信的进程）系统的开发工作既可以在本地单机上进行，也可以跨网络进行。基于TCP&#x2F;IP的网络通信，简单的说就是通信的两方的一种约定，用套接字中的相关函数来完成通信过程。</p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p><strong>产生条件：</strong> 资源互斥、占有并等待、不可抢占、循环等待；</p>
+<p><strong>预防策略：</strong>1. 破坏占有并等待：静态分配策略，必须能申请到全部资源进程才执行，要么全占有，要么都不占有，但这种策略 <strong>严重地降低了资源利用率</strong>，因为在每个进程所占有的资源中，有些资源是在比较靠后的执行时间里采用的，造成其他进程因为申请不到这些资源而处于等待状态；</p>
+<ol start="2">
+<li>破坏循环等待：给资源编号，进程按递增顺序申请和按递减顺序释放资源。</li>
+</ol>
+<p><strong>避免死锁</strong>： 银行家算法：当一个进程申请使用资源的时候，银行家算法通过先 <strong>试探</strong> 分配给该进程资源，然后通过安全性算法判断分配后的系统是否处于安全状态，若不安全则试探分配作废，让该进程继续等待。</p>
+<p><strong>检测与解除</strong>：<strong>进程资源分配图</strong>  撤销涉及死锁的进程（全部或逐个），抢占资源，进行资源的重新分配；</p>
+<h2 id="内存管理机制"><a href="#内存管理机制" class="headerlink" title="内存管理机制"></a>内存管理机制</h2><p><strong>块式管理</strong>  – 块是固定大小，产生大量内存碎片–&gt;  <strong>页式</strong> <strong>管理</strong> –划分为比较小一页一页的，有效减少了内存碎片，但是没有实际意义–&gt; <strong>段式管理</strong>（划分为具有实际意义的段，更好满足用户需求）</p>
+<p>段页式内存管理：结合了段式管理和页式管理的优点</p>
+<p><strong>快表</strong>：解决了虚拟地址到物理地址的转换要快的问题；<strong>以空间换时间</strong></p>
+<p><strong>多级页表</strong>：解决虚拟地址空间大，页表也会很大的问题。内存中只放一级页表，需要哪个二级页表就从磁盘调入。      			   	<strong>以时间换空间</strong></p>
+<h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a><strong>虚拟内存</strong></h2><p><a href="https://juejin.cn/post/6844903507594575886">虚拟内存的那点事儿 - 掘金 (juejin.cn)</a></p>
+<p>是计算机系统内存管理的一种技术，<strong>虚拟内存的重要意义是它定义了一个连续的虚拟地址空间</strong>，并且 <strong>把内存扩展到硬盘空间</strong>。</p>
+<ul>
+<li>它把主存看作为一个存储在硬盘上的虚拟地址空间的高速缓存，并且只在主存中缓存活动区域（按需缓存）。</li>
+<li>它为每个进程提供了一个一致的地址空间，从而降低了程序员对内存管理的复杂性。</li>
+<li>它还保护了每个进程的地址空间不会被其他进程破坏。</li>
+</ul>
+<h3 id="局部性原理"><a href="#局部性原理" class="headerlink" title="局部性原理"></a><strong>局部性原理</strong></h3><ol>
+<li><strong>时间局部性</strong> ：如果程序中的某条指令一旦执行，不久以后该指令可能再次执行；如果某数据被访问过，不久以后该数据可能再次被访问。产生时间局部性的典型原因，是由于在程序中存在着大量的循环操作。</li>
+<li><strong>空间局部性</strong> ：一旦程序访问了某个存储单元，在不久之后，其附近的存储单元也将被访问，即程序在一段时间内所访问的地址，可能集中在一定的范围之内，这是因为指令通常是顺序存放、顺序执行的，数据也一般是以向量、数组、表等形式簇聚存储的。</li>
+</ol>
+<h2 id="虚拟内存技术的实现"><a href="#虚拟内存技术的实现" class="headerlink" title="虚拟内存技术的实现"></a><strong>虚拟内存技术的实现</strong></h2><h3 id="请求分页存储管理"><a href="#请求分页存储管理" class="headerlink" title="请求分页存储管理"></a><strong>请求分页存储管理</strong></h3><p><strong>缺页中断</strong>：如果<strong>需执行的指令或访问的数据尚未在内存</strong>（称为缺页或缺段），则由处理器通知操作系统将相应的页面或段<strong>调入到内存</strong>，（分配的内存空间不够则触发页面置换算法）然后继续执行程序；</p>
+<h3 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h3><ul>
+<li><strong>OPT 页面置换算法（最佳页面置换算法）</strong> ：最佳（Optimal， OPT）置换算法所选择的被淘汰页面将是以后永不使用的，或者是在最长时间内不再被访问的页面，这样可以保证获得最低的缺页率。但由于人们目前无法预知进程在内存下的若千页面中哪个是未来最长时间内不再被访问的，因而该算法无法实现。一般作为衡量其他置换算法的方法。</li>
+<li><strong>FIFO（First In First Out） 页面置换算法（先进先出页面置换算法）</strong> ： 总是淘汰最先进入内存的页面，即选择在内存中驻留时间最久的页面进行淘汰。</li>
+<li><strong>LRU （Least最近使用）页面置换算法（最近最久未使用页面置换算法）</strong> ：LRU 算法赋予每个页面一个访问字段，用来记录一个页面自上次被访问以来所经历的时间 T，当须淘汰一个页面时，选择现有页面中其 T 值最大的，即最近最久未使用的页面予以淘汰。</li>
+<li><strong>LFU （Minimum Often Used）页面置换算法（最少使用页面置换算法）</strong> ： 该置换算法选择在之前时期使用最少的页面作为淘汰页。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础</category>
+      </categories>
+      <tags>
+        <tag>基础</tag>
       </tags>
   </entry>
 </search>
